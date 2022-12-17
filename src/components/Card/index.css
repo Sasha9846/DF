@@ -1,0 +1,18 @@
+.card {
+    box-shadow: 0 0 5px #2226;
+    border-radius: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.card__heart {
+    position: absolute;
+    top: .5em;
+    right: 1em;
+    color: crimson;
+}

@@ -1,0 +1,13 @@
+footer {
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__copy {
+    font-size: 1.5em;
+}
+.footer__text {
+    text-align: right;
+}

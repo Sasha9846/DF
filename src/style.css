@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 100px auto 50px;
+}
+.container>* {
+    padding: 0 calc(50% - 600px);
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+}
+@media (max-width: 1260px) {
+    .container>* {
+        padding: 0 30px;
+    }
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
