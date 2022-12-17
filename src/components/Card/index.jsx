@@ -4,12 +4,14 @@ import "./index.css";
 export default ({text, like}) => {
     return <div className="card">
         {text}
-        <span className="card__heart">
+        {/* return <div className="UpBlock"> */}
+        {/* <span className="card__heart">
             {
                 like 
                 ? <i className="fa-solid fa-heart"></i>
                 : <i className="fa-regular fa-heart"></i>
             }
-        </span>
+        </span> */}
+    {/* </div> */}
     </div>
 }

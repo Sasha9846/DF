@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Search from "../Search/search";
 import "./header.css";
+import Logo from "./img/logo.png";
 
 export default ({user, setUser, products, setModalActive}) => {
     // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
@@ -26,7 +27,7 @@ export default ({user, setUser, products, setModalActive}) => {
         setUser("");
     }
     return <header>
-        <a className="logo" href="">DogFood</a>
+        <a className="logo" href=""><img src= {Logo} alt="" /></a>
         <Search data={products}/>
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">

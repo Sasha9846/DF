@@ -10,6 +10,7 @@ a {
     min-height: 100vh;
     display: grid;
     grid-template-rows: 100px auto 50px;
+    font-family: sans-serif
 }
 .container>* {
     padding: 0 calc(50% - 600px);
@@ -18,6 +19,9 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    justify-content: center;
 }
 @media (max-width: 1260px) {
     .container>* {
@@ -28,3 +32,75 @@ a {
     }
 }
 
+.imgInCard{
+width: 240px;
+}
+.cardProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cardProduct h2{
+    margin-bottom: 0;
+}
+.cardProduct p{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.sqButton{
+    background-color: rgb(233, 140, 34);
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 3em;
+    height: 60px;
+    width: 270px;
+    border: none;
+    position: relative;
+    font-weight: 600;
+    margin-left: 80px;
+    cursor: pointer;
+}
+.UpBlock {
+    background-color: none;
+   display: flex;
+   flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 1em;
+    color:  rgb(255, 255, 255);
+    margin-left: 0px;
+   
+}
+.UpBlock h1 {
+    margin: 5px;
+    font-weight: 700;
+    
+}
+.UpBlock p {
+    font-weight: 0;
+    margin: 5px;
+    font-size: 20px;
+    
+}
+.squImg {
+    height: 160px;
+    width: auto;
+    margin-left: 30px;
+    
+}
+.UpBlockSq {
+    background-color: rgb(48, 45, 39);
+    display: flex;
+    flex-direction: row row-reverse;
+    border-radius: 3em;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin-top: 50px;
+}

@@ -8,9 +8,42 @@ import Modal from "./components/Modal";
 
 import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
-import {Api} from "./Api"
-const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
+import {Api} from "./Api";
+import Nut from'./img/nut1.jpg';
 
+const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
+const prodCards = [
+<div className="cardProduct">
+      <img className="imgInCard" src={Nut}/>
+      <h2> Орешки</h2>
+      <p>Очень вкусные</p>
+</div>, 
+
+<div className="cardProduct">
+      <img className="imgInCard" src={Nut}/>
+      <h2> Орешки</h2>
+      <p>Очень вкусные</p>
+</div>,
+
+<div className="cardProduct">
+      <img className="imgInCard" src={Nut}/>
+      <h2> Орешки</h2>
+      <p>Очень вкусные</p>
+</div>,
+
+<div className="cardProduct">
+      <img className="imgInCard" src={Nut}/>
+      <h2> Орешки</h2>
+      <p>Очень вкусные</p>
+</div>,
+
+<div className="cardProduct">
+      <img className="imgInCard" src={Nut}/>
+      <h2> Орешки</h2>
+      <p>Очень вкусные, белочкам по кайфу</p>
+</div>,
+
+]
 const App = () => {
     const [user, setUser] = useState(localStorage.getItem("user8"));
     const [token, setToken] = useState(localStorage.getItem("token8"));
@@ -68,7 +101,7 @@ useEffect(() => {
                     setModalActive={setModalActive}
                 />
                 <main>
-                    {user ? <Catalog data={goods}/> : <Home data={smiles}/>}
+                    {user ? <Catalog data={goods}/> : <Home data={prodCards}/>}
                 </main>
                 <Footer/>
             </div>
