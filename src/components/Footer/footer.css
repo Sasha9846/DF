@@ -4,12 +4,55 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 120px;
+    padding: 30px;
     
+    
+
 }
-.footer__copy {
-    font-size: 1.4em;
+.footer__left{
+    text-align: left;
+    display: grid;
+    gap: 10px;
 }
-.footer__text {
-    text-align: right;
-    font-size: 80%;
+
+.footer__center{
+    text-align: left;
+    display: grid;
+    gap: 10px;
+}
+
+.footer__right{
+    text-align: left;
+    display: grid;
+    gap: 10px;
+}
+
+.footer__right h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+
+a {
+    font-size: 16px;
+}
+
+footer a:hover{
+    color: orange;
+}
+
+#telnumb{
+    font-size: 18px;
+}
+
+.foticons{
+    height: auto;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+.ic {
+    height: 20px;
+    
 }

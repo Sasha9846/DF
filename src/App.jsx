@@ -43,6 +43,11 @@ const prodCards = [
       <p>Очень вкусные, белочкам по кайфу</p>
 </div>,
 
+<div className="cardProduct">
+      <img className="imgInCard" src=""/>
+      <h2> Примечание</h2>
+      <p>в настоящий момент сайт находится еще на стадии разработки, автор к сожалению не упел доделать все, что хотел. А что успел, показал))</p>
+</div>,
 ]
 const App = () => {
     const [user, setUser] = useState(localStorage.getItem("user8"));
