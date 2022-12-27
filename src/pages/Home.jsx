@@ -1,8 +1,10 @@
 import React from "react";
 import Card from "../components/Card";
 import Sqr from "../img/squ.png"
+import Ads from "../components/Ads/ads"
 export default ({data}) => {
     return <>
+    <Ads/>
 <div className="UpBlockSq">
 <img className="squImg" src={Sqr}/>
     <div className="UpBlock">
