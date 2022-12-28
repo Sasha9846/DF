@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "./style.css";
 import products from "./assets/data.json";
-
+// роутер - это маршрут
+import {Routes, Route} from "react-router-dom";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import Modal from "./components/Modal";
@@ -10,6 +11,9 @@ import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
 import {Api} from "./Api";
 import Nut from'./img/nut1.jpg';
+
+import Profile from "./pages/Profile";
+import Product from "./pages/Product";
 
 const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 const prodCards = [
@@ -106,7 +110,15 @@ useEffect(() => {
                     setModalActive={setModalActive}
                 />
                 <main>
-                    {user ? <Catalog data={goods}/> : <Home data={prodCards}/>}
+                    {/* ниже для прошлых версий без реакт-роутер
+                    {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
+                    <Routes>
+                        <Route path="/" element= {<Home data={smiles}/>}/>
+                        <Route path="/catalog" element={
+                        <Catalog data={goods}/>}/>
+                        <Route path="/profile" element={<Profile setUser={setUser} user={user}/>}/>
+                        <Route path="/catalog/:id" element={<Product/>}/>
+                    </Routes>
                 </main>
                 <Footer/>
             </div>

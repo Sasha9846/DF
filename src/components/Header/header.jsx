@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Search from "../Search/search";
 import "./header.css";
 import Logo from "./img/logo.png";
+import {Link} from "react-router-dom";
 
 export default ({user, setUser, products, setModalActive}) => {
     // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
@@ -27,12 +28,12 @@ export default ({user, setUser, products, setModalActive}) => {
         setUser("");
     }
     return <header>
-        <a className="logo" href=""><img src= {Logo} alt="" /></a>
+        <Link className="logo" to="/"><img src= {Logo} alt="" /></Link>
         <Search data={products}/>
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">
             {/* true && true */}
-            {user && <a href="">{user}</a>}
+            {user && <Link to="/profile">{user}</Link>}
             {!user && <a href="" onClick={logIn}>Войти</a>}
             {user && <a href="" onClick={logOut}>Выйти</a>}
         </nav>
