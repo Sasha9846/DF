@@ -4,7 +4,7 @@ import "./header.css";
 import Logo from "./img/logo.png";
 import {Link} from "react-router-dom";
 
-export default ({user, setUser, products, setModalActive}) => {
+export default ({user, setUser, goods, searchGoods, setModalActive}) => {
     // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
     // const [user, setUser] = useState(localStorage.getItem("user8"));
 
@@ -29,7 +29,7 @@ export default ({user, setUser, products, setModalActive}) => {
     }
     return <header>
         <Link className="logo" to="/"><img src= {Logo} alt="" /></Link>
-        <Search data={products}/>
+        <Search data={goods} searchGoods={searchGoods}/>
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">
             {/* true && true */}

@@ -1,9 +1,12 @@
 import React from "react";
 import Card from "../components/Card";
 import {Link} from "react-router-dom";
+import {EmojiFrown} from "react-bootstrap-icons"
 
 export default ({data}) => {
     return <>
+    {data.length > 0 
+    ? <>
         <h1>Каталог товаров</h1>
         <div className="cards">
             {/* ниже так лучше не делать */}
@@ -12,4 +15,12 @@ export default ({data}) => {
             </Link>)}
         </div>
     </>
+    : <div className ="empty-block">
+<EmojiFrown/>
+<p>По запросу не найдено ни одного товара</p>
+<Link to="/" className ="btn">Вернуться на главную</Link>
+     </div>
+     
+}
+</>
 }
