@@ -4,7 +4,8 @@ import pic from "./img/twosqu.png";
 
 export default () => {
     return <div className="promo">
-        <p>АРАХИСОВЫЕ ВЫХОДНЫЕ</p>
-        <img src={pic} alt="белочки"/>
+        <p>ТОРОПИСЬ ЗА СКИДКАМИ</p>
+        
+        <img src={pic} alt="doggy"/>
     </div>
 }

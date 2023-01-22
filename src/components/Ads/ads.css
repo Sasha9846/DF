@@ -7,9 +7,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 20px;
-    background-image: url("./img/peanut.jpeg");
-    background-position: center;
-    background-size: cover;
+   
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -27,7 +25,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #99CCCD;
     z-index: -1;
     }
 /* .promo * {
@@ -35,5 +33,5 @@
     z-index: 1;
 } */
 .promo img {
-    width: 240px;
+    width: 270px;
 }

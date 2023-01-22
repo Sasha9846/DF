@@ -1,12 +1,12 @@
 header {
-    background-color: rgb(233, 140, 34);;
+    background-color: #419494;;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
 }
 .logo {
-    font-size: 1.0em;
+    height: 80px;
     
 }
 .search {
@@ -21,4 +21,5 @@ header {
 .menu {
     display: flex;
     gap: 1em;
+    color: white;
 }

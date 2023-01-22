@@ -17,43 +17,47 @@ import Product from "./pages/Product";
 
 
 const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
-const prodCards = [
-<div className="cardProduct">
-      <img className="imgInCard" src={Nut}/>
-      <h2> Орешки</h2>
-      <p>Очень вкусные</p>
-</div>, 
 
-<div className="cardProduct">
-      <img className="imgInCard" src={Nut}/>
-      <h2> Орешки</h2>
-      <p>Очень вкусные</p>
-</div>,
 
-<div className="cardProduct">
-      <img className="imgInCard" src={Nut}/>
-      <h2> Орешки</h2>
-      <p>Очень вкусные</p>
-</div>,
 
-<div className="cardProduct">
-      <img className="imgInCard" src={Nut}/>
-      <h2> Орешки</h2>
-      <p>Очень вкусные</p>
-</div>,
 
-<div className="cardProduct">
-      <img className="imgInCard" src={Nut}/>
-      <h2> Орешки</h2>
-      <p>Очень вкусные, белочкам по кайфу</p>
-</div>,
+// const prodCards = [
+// <div className="cardProduct">
+//       <img className="imgInCard" src={Nut}/>
+//       <h2> Орешки</h2>
+//       <p>Очень вкусные</p>
+// </div>, 
 
-<div className="cardProduct">
-      <img className="imgInCard" src=""/>
-      <h2> Примечание</h2>
-      <p>в настоящий момент сайт находится еще на стадии разработки, автор к сожалению не упел доделать все, что хотел. А что успел, показал))</p>
-</div>,
-]
+// <div className="cardProduct">
+//       <img className="imgInCard" src={Nut}/>
+//       <h2> Орешки</h2>
+//       <p>Очень вкусные</p>
+// </div>,
+
+// <div className="cardProduct">
+//       <img className="imgInCard" src={Nut}/>
+//       <h2> Орешки</h2>
+//       <p>Очень вкусные</p>
+// </div>,
+
+// <div className="cardProduct">
+//       <img className="imgInCard" src={Nut}/>
+//       <h2> Орешки</h2>
+//       <p>Очень вкусные</p>
+// </div>,
+
+// <div className="cardProduct">
+//       <img className="imgInCard" src={Nut}/>
+//       <h2> Орешки</h2>
+//       <p>Очень вкусные, белочкам по кайфу</p>
+// </div>,
+
+// <div className="cardProduct">
+//       <img className="imgInCard" src=""/>
+//       <h2> Примечание</h2>
+//       <p>в настоящий момент сайт находится еще на стадии разработки, автор к сожалению не упел доделать все, что хотел. А что успел, показал))</p>
+// </div>,
+// ]
 const App = () => {
     const [user, setUser] = useState(localStorage.getItem("user8"));
     const [token, setToken] = useState(localStorage.getItem("token8"));
@@ -119,7 +123,7 @@ setVisibleGoods(goods)
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>
-                        <Route path="/" element= {<Home data={prodCards}/>}/>
+                        <Route path="/" element= {<Home data={smiles}/>}/>
                         <Route path="/catalog" element={
                         <Catalog data={visibleGoods}/>}/>
                         <Route path="/profile" element={<Profile setUser={setUser} user={user}/>}/>

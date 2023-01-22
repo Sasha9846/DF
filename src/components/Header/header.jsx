@@ -28,7 +28,7 @@ export default ({user, setUser, goods, searchGoods, setModalActive}) => {
         setUser("");
     }
     return <header>
-        <Link className="logo" to="/"><img src= {Logo} alt="" /></Link>
+        <Link  to="/"><img className="logo" src= {Logo} alt="" /></Link>
         <Search data={goods} searchGoods={searchGoods}/>
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">

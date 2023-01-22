@@ -34,7 +34,7 @@ export default () => {
         <div className="footer__right">
         <h1>Контакты</h1>
         <a id="telnumb" href="">8 (999) 700-77-77</a>
-        <a href=""> squirrelfood@mail.ru</a>
+        <a href=""> dogfood@mail.ru</a>
         </div>
 
     </footer>
