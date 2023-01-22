@@ -15,6 +15,7 @@ import Nut from'./img/nut1.jpg';
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 
+
 const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 const prodCards = [
 <div className="cardProduct">
@@ -118,7 +119,7 @@ setVisibleGoods(goods)
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>
-                        <Route path="/" element= {<Home data={smiles}/>}/>
+                        <Route path="/" element= {<Home data={prodCards}/>}/>
                         <Route path="/catalog" element={
                         <Catalog data={visibleGoods}/>}/>
                         <Route path="/profile" element={<Profile setUser={setUser} user={user}/>}/>

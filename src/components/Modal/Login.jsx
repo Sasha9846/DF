@@ -43,5 +43,6 @@ api.signIn(body)
         />
         <button className="btn" type="submit">Войти</button>
         <button className="btn link" type="button" onClick={() => {change(prev => !prev)}}>Зарегистрироваться</button>
+        <button className="forgotPassword" type="submit">Забыли пароль?</button>
     </form>
 }

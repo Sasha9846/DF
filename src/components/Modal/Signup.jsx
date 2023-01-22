@@ -72,5 +72,6 @@ export default ({change, api, close, setToken}) => {
         />
         <button className="btn" type="submit" disabled={testPwd}>Зарегистрироваться</button>
         <button className="btn link" type="button" onClick={() => {change(prev => !prev)}}>Войти</button>
+        
     </form>
 }

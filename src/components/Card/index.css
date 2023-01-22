@@ -9,10 +9,14 @@
     gap: 1em;
     justify-content: center;
     align-items: center;
+    width: 300px;
 }
 .card__heart {
     position: absolute;
     top: .5em;
     right: 1em;
     color: crimson;
+}
+.cardsImage {
+    height: 150px;
 }

@@ -11,7 +11,13 @@ export default ({data}) => {
         <div className="cards">
             {/* ниже так лучше не делать */}
             {data.map((el, i) => <Link to={`/catalog/${el._id}`} key={el._id}>
-            <Card key={"card_" + i} text={el.name} like={(i + 1) % 2 === 0}/>
+            <Card key={"card_" + i} 
+            cardImg={el.pictures}
+            text={el.name} 
+            descr={el.description}
+            price = {el.price}
+            description = {el.description}
+            like={(i + 1) % 2 === 0}/>
             </Link>)}
         </div>
     </>
