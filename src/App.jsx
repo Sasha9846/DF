@@ -15,10 +15,10 @@ import Nut from'./img/nut1.jpg';
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 
+import Card from "./components/Card";
+const smiles = [<Card/>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
-const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
-
-
+alert(<Card/>)
 
 
 // const prodCards = [

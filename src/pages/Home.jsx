@@ -1,10 +1,31 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Card from "../components/Card";
 import Sqr from "../img/squ.png";
 import Ads from "../components/Ads/ads";
 import {Link} from "react-router-dom";
+import Api from "../Api";
+
+
+// const [product, setProducts] = useState([])
+
+
 
 export default ({data}) => {
+//     возможное решение
+//  const [prod, setProd] = useState([]);
+
+//  useEffect(() =>
+//     fetch("https://api.react-learning.ru/products")
+//     .then(responce => {
+//         if (responce.ok){
+//             return responce.json()
+//         }
+//     })
+//     .then(prod => {setProd(prod)
+//     }), []
+//  )
+
+
     return <>
     {/* ниже рпанозначные 2 строки, если тег а то есть перезагрузка страницы, если чз компонент Линк, то перезагрузкки нет */}
    {/* <a href="/catalog">Перейти в КАТАЛОГ</a> */}
@@ -23,5 +44,9 @@ export default ({data}) => {
             {data.map((el, i) => <Card key={"card_" + i} text={el} like={(i + 1) % 2 === 0}/>)}
         </div>
         <Ads/>
+        
+
+       
+      
     </>
 }

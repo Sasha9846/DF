@@ -66,7 +66,7 @@ setLike() { // добавить лайк
     })
 }
 
-seleteLike() { // убрать лайк
+deleteLike() { // убрать лайк
     return fetch(`${this.path}/products/likes/:productId`, {
         method: "DELETE",
         headers: {

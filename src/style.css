@@ -69,6 +69,12 @@ width: 240px;
     align-items: center;
     justify-content: center;
 }
+
+.sqButton :hover {
+    color: orange;
+}
+
+
 .UpBlock {
     background-color: none;
    display: flex;
