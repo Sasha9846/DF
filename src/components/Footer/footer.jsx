@@ -28,8 +28,7 @@ export default () => {
             <a href="">Часто спрашивают</a>
             <a href="">Обратная связь</a>
         </div>
-
-
+{/* /рпрр */}
 
         <div className="footer__right">
         <h1>Контакты</h1>
