@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import {useParams, Link} from "react-router-dom";
 import "./Product.css";
 import Review from "../components/Review/review";
-
+import { ArrowRight, ArrowLeftCircle } from 'react-bootstrap-icons';
 export default ({}) => {
     const {id} = useParams();
     const [product, setProduct] = useState({})
@@ -26,10 +26,47 @@ useEffect(() => {
 
 })
 return <>
-    <h1>{product.name || 'Страница товара'}</h1>
-    <p>{id}</p>
-    <img className="productImg" src={product.pictures} alt="Изображение товара"></img>
-    <p>{`${product.price} рублей`}</p>
+
+
+
+<div className="productTopBlock">
+
+<h1 className ="productHName">{product.name || 'Страница товара'}</h1>
+    <p className ="productArticle">Артикул: {id}</p>
+    <div className ="btnReturnInCatalog"><Link to="/catalog"><ArrowLeftCircle/> Назад</Link></div>
+    </div>
+
+
+
+<div className="productPage">
+    
+    <div className="productPageBlock">  
+      
+         <img className="productImg" src={product.pictures} alt="Изображение товара"></img>
+   
+         <div lassName="productRightBlock">
+
+            <div className="productPriceBlock">
+                <h2>Стоимость</h2>
+                <h3>{`${product.price} ₽`}</h3>   
+                <p>{product.wight}</p>
+            </div>
+
+            <div className="productDescriptionsBlock">
+                <h2>Описание</h2>
+                <p>{product.description}</p>
+             </div>
+
+
+         </div>
+
+         
+    </div>
+
+
+
+    
+   
     <h2>Отзывы</h2>
     <div className="reviews">
         {product.reviews && product.reviews.length > 0
@@ -39,5 +76,6 @@ return <>
 
     </div>
     <Link to="/catalog">Назад</Link>
+    </div>
     </>
 }

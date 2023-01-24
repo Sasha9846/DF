@@ -17,6 +17,7 @@ export default ({data}) => {
             descr={el.description}
             price = {el.price}
             description = {el.description}
+            wight = {el.wight}
             like={(i + 1) % 2 === 0}/>
             </Link>)}
         </div>

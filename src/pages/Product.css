@@ -1,4 +1,92 @@
+.productPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.productHName{
+    margin-bottom: 20px;
+}
 .productImg {
-    width: 300px;
+    width: 400px;
     height: auto;
+}
+.productArticle {
+margin: 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+    margin-bottom: 30px;
+}
+.productPageBlock{
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+    
+    align-items: center;
+    
+}
+.productRightBlock{
+    display: flex;
+    
+    flex-direction: column;
+    
+    gap: 50px;
+}
+
+.productPriceBlock {
+    margin: 0;
+    
+    margin-bottom: 35px;
+}
+
+.productPriceBlock h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.productPriceBlock h3{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.productPriceBlock p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    opacity: 0.5;
+}
+
+.productDescriptionsBlock{
+    
+    margin: 0;
+    margin-top: 35px;
+}
+
+.productDescriptionsBlock h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.productDescriptionsBlock p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    opacity: 0.5;
+}
+
+
+.productTopBlock {
+    display: flex;
+    flex-direction: column;
+    margin-left: 140px;
+}
+
+.productTopBlock h1{
+margin: 0;
+margin-top: 40px;
+margin-bottom: 10px;
+}
+
+
+.btnReturnInCatalog {
+    color: #000;
+}
+.btnReturnInCatalog:hover{
+    color: #419494;
 }

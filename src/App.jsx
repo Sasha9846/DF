@@ -18,7 +18,7 @@ import Product from "./pages/Product";
 import Card from "./components/Card";
 const smiles = [<Card/>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
-alert(<Card/>)
+// alert(<Card/>)
 
 
 // const prodCards = [

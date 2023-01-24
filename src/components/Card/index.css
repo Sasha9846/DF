@@ -6,17 +6,30 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 1em;
     justify-content: center;
     align-items: center;
     width: 300px;
+    
 }
 .card__heart {
     position: absolute;
     top: .5em;
     right: 1em;
     color: crimson;
+
 }
 .cardsImage {
     height: 150px;
+}
+.productPrice {
+margin-top: 10px;
+}
+.productDescriprion {
+    color: rgba(0, 0, 0, 0.507);
+    margin-top: 0px;
+}
+
+.productWight {
+    color: rgba(0, 0, 0, 0.507);
+    margin-top: 0px;
 }
