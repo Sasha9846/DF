@@ -123,7 +123,7 @@ setVisibleGoods(goods)
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>
-                        <Route path="/" element= {<Home data={smiles}/>}/>
+                        <Route path="/" element= {<Home data={goods}/>}/>
                         <Route path="/catalog" element={
                         <Catalog data={visibleGoods}/>}/>
                         <Route path="/profile" element={<Profile setUser={setUser} user={user}/>}/>

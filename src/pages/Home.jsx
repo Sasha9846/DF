@@ -11,21 +11,7 @@ import Api from "../Api";
 
 
 export default ({data}) => {
-//     возможное решение
-//  const [prod, setProd] = useState([]);
-
-//  useEffect(() =>
-//     fetch("https://api.react-learning.ru/products")
-//     .then(responce => {
-//         if (responce.ok){
-//             return responce.json()
-//         }
-//     })
-//     .then(prod => {setProd(prod)
-//     }), []
-//  )
-
-
+    console.log(data);
     return <>
     {/* ниже рпанозначные 2 строки, если тег а то есть перезагрузка страницы, если чз компонент Линк, то перезагрузкки нет */}
    {/* <a href="/catalog">Перейти в КАТАЛОГ</a> */}
@@ -41,12 +27,8 @@ export default ({data}) => {
     </div>
         <h1>Покупают сейчас</h1>
         <div className="cards">
-            {data.map((el, i) => <Card key={"card_" + i} text={el} like={(i + 1) % 2 === 0}/>)}
+            {data.map((product, i) => <Card key={"card_" + i} product={product} like={(i + 1) % 2 === 0}/>)}
         </div>
         <Ads/>
-        
-
-       
-      
     </>
 }

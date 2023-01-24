@@ -1,19 +1,19 @@
 import React from "react";
 import "./index.css";
 
-export default ({text, like, cardImg, price, description}) => {
+export default ({product}) => {
     return <div className="card">
-       <img className="cardsImage" src = {cardImg}></img>
-        {text}
+       <img className="cardsImage" src = {product.pictures}></img>
+        {product.name}
         <br></br>
-       {price}
+        {product.price}
        <br></br>
-        {description}
+        {product.description}
         {/* сюда выводить изображение кажлдого товара */}
         {/* return <div className="UpBlock"> */}
         {/* <span className="card__heart">
             {
-                like 
+                like
                 ? <i className="fa-solid fa-heart"></i>
                 : <i className="fa-regular fa-heart"></i>
             }
