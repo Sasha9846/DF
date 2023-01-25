@@ -12,7 +12,7 @@ const {user, setUser} = useContext(Ctx);
     }
     return <>
         <h1>Личный кабинет</h1>
-        <p>Привет, {user}</p>
+        <p>Привет, {user && user.name}</p>
         <a href="" onClick={logOut} style={{color: "orange"}}>Покинуть личный кабинет</a>
     </>
 }

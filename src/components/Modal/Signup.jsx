@@ -26,7 +26,6 @@ const {api, setToken, setUser} = useContext(Ctx);
             email: inp1,
             password: inp2
         }
-        console.log(body);
         api.signUp(body)
         .then(res => res.json())
         .then(data=> {
@@ -35,10 +34,10 @@ const {api, setToken, setUser} = useContext(Ctx);
                 api.SignIn(body)
 .then(res => res.json())
 .then(data => {
-    localStorage.setItem("user8", data.data.name);
+    localStorage.setItem("user8", JSON.stringify(data.data));
     localStorage.setItem("token8", data.token);
     setToken(data.token);
-    setUser(data.data.name)
+    setUser(data.data)
 })
 
 

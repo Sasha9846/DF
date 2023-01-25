@@ -1,7 +1,7 @@
 import React from "react";
 
 export default React.createContext({
-user: "",
+user: {},
 token: "",
 api: {},
 setUser: () => {},

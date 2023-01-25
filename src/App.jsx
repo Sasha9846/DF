@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import "./style.css";
 import products from "./assets/data.json";
 // роутер - это маршрут
@@ -26,45 +26,12 @@ const PATH = "/";
 // alert(<Card/>)
 
 
-// const prodCards = [
-// <div className="cardProduct">
-//       <img className="imgInCard" src={Nut}/>
-//       <h2> Орешки</h2>
-//       <p>Очень вкусные</p>
-// </div>, 
-
-// <div className="cardProduct">
-//       <img className="imgInCard" src={Nut}/>
-//       <h2> Орешки</h2>
-//       <p>Очень вкусные</p>
-// </div>,
-
-// <div className="cardProduct">
-//       <img className="imgInCard" src={Nut}/>
-//       <h2> Орешки</h2>
-//       <p>Очень вкусные</p>
-// </div>,
-
-// <div className="cardProduct">
-//       <img className="imgInCard" src={Nut}/>
-//       <h2> Орешки</h2>
-//       <p>Очень вкусные</p>
-// </div>,
-
-// <div className="cardProduct">
-//       <img className="imgInCard" src={Nut}/>
-//       <h2> Орешки</h2>
-//       <p>Очень вкусные, белочкам по кайфу</p>
-// </div>,
-
-// <div className="cardProduct">
-//       <img className="imgInCard" src=""/>
-//       <h2> Примечание</h2>
-//       <p>в настоящий момент сайт находится еще на стадии разработки, автор к сожалению не упел доделать все, что хотел. А что успел, показал))</p>
-// </div>,
-// ]
 const App = () => {
-    const [user, setUser] = useState(localStorage.getItem("user8"));
+    let usr = localStorage.getItem("user8");
+    if (usr) {
+        usr = JSON.parse(usr);
+    }
+    const [user, setUser] = useState(usr);
     const [token, setToken] = useState(localStorage.getItem("token8"));
     const [modalActive, setModalActive] = useState(false);
     const [api, setApi] = useState(new Api(token))
@@ -85,9 +52,13 @@ const App = () => {
     }, []) // в этом случае консольлог сработает лишь раз, а если убрать [], то при любом изменении сайта)нажамать кнопку, обновтьь и тд) [] - это зависимость от чего-то
     
     useEffect(() => { // нужен чтоб загружать данные с серв, делать гет-запрос
-        console.log('Change token'); 
-        setApi(new Api(token))
-        setUser (localStorage.getItem("user8")) 
+        console.log("change token");
+        setApi(new Api(token));
+        let usr = localStorage.getItem("user8");
+        if (usr) {
+            usr = JSON.parse(usr);
+        }
+        setUser(usr); 
     }, [token]) // зависимость от токкена
 
 useEffect(() => {

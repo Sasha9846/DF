@@ -1,29 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 // useEffect чтоб данные с сервака подгрузить
 import {useParams, Link} from "react-router-dom";
 import "./Product.css";
 import Review from "../components/Review/review";
 import { ArrowRight, ArrowLeftCircle } from 'react-bootstrap-icons';
+import Ctx from "../Ctx";
+
 export default ({}) => {
     const {id} = useParams();
     const [product, setProduct] = useState({})
 
 // по id приходят данные о товаре для отрисовки страницы с товаром
-
-let token = localStorage.getItem('token8');
+// let token = localStorage.getItem('token8');
+const {api} = useContext(Ctx);
 useEffect(() => {
-    if (token){
-        fetch(`https://api.react-learning.ru/products/${id}`, {
-            headers: {
-              authorization: `Bearer ${token}`
-            }
-            }).then (res => res.json()).then (data => {
-                // console.log(data) в этой строке приходят все данные с товара, и чтоб его вывести см в консоли, что у него есть
+  api.getProduct(id)
+        .then (res => res.json())
+        .then (data => {
                 setProduct(data);
             })
-    }
-
-
+    
 })
 return <>
 

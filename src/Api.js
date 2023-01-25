@@ -37,6 +37,15 @@ getProducts() { // получение продуктов
     })
 }
 
+getProduct(id) { // получение продуктa
+    return fetch(`${this.path}/products/${id}`, 
+    {
+        headers: {
+            "authorization": `Bearer ${this.token}`
+        } 
+    })
+}
+
 setProduct() { // добавить продукт
     return fetch(`${this.path}/products`, {
         method: "POST",

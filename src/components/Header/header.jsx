@@ -36,7 +36,7 @@ const {user, setUser} = useContext(Ctx);
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">
             {/* true && true */}
-            {user && <Link to="/profile">{user}</Link>}
+            {user && user.name && <Link to="/profile">{user.name}</Link>}
             {!user && <a href="" onClick={logIn}>Войти</a>}
             {user && <a href="" onClick={logOut}>Выйти</a>}
         </nav>
