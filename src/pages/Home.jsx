@@ -48,7 +48,7 @@ export default ({data}) => {
             cardImg = {el.pictures}
             price = {el.price}
             wight = {el.wight}
-            description = {el.description}
+            // description = {el.description}
             />)}
         </div>
     

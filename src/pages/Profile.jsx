@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useNavigate } from "react-router-dom";
-
-export default ({setUser, user}) => {
+import Ctx from "../Ctx";
+export default () => {
 const navigate = useNavigate();
-
+const {user, setUser} = useContext(Ctx);
     const logOut = (e) => {
         e.preventDefault();
         setUser(null);

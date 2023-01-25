@@ -4,7 +4,7 @@ import "./style.css";
 import Signup from "./Signup";
 import Login from "./Login";
 
-export default ({isActive, setState, api, setToken}) => {
+export default ({isActive, setState}) => {
     const [auth, setAuth] = useState(true);
     let style = {
         display: isActive && "flex",
@@ -14,10 +14,10 @@ export default ({isActive, setState, api, setToken}) => {
         <div className="modal">
             <div className="modal-close" onClick={() => setState(false)}/>
             <h2>{auth ? "Войти" : "Зарегистрироваться"}</h2>
-            {auth ? <Login change={setAuth} api={api}
-            close={setState} setToken = {setToken}/> 
-            : <Signup change={setAuth} api={api} 
-            close={setState} setToken = {setToken}/>}
+            {auth ? <Login change={setAuth} 
+            close={setState} /> 
+            : <Signup change={setAuth}  
+            close={setState} />}
         </div>
     </div>
 }

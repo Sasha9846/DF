@@ -14,7 +14,7 @@ import Nut from'./img/nut1.jpg';
 
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
-
+import Ctx from "./Ctx";
 import Card from "./components/Card";
 const smiles = [<Card/>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
@@ -110,11 +110,20 @@ setVisibleGoods(goods)
     }, [goods])
     
     return (
-        <>
+        <Ctx.Provider value ={{
+// слева части которые приходят от Ctx,а справа, которые были выше в этом файле
+            user: user,
+            token: token,
+            api: api,
+            setUser: setUser,
+            setToken: setToken,
+            setApi: setApi
+        }}>
             <div className="container">
                 <Header 
-                    user={user} 
-                    setUser={setUser}
+                // так было раньше, до подключения ctx.js
+                    // user={user} 
+                    // setUser={setUser}
                     goods={goods} 
                     searchGoods={setVisibleGoods}
                     setModalActive={setModalActive}
@@ -126,7 +135,7 @@ setVisibleGoods(goods)
                         <Route path="/" element= {<Home data={products}/>}/>
                         <Route path="/catalog" element={
                         <Catalog data={visibleGoods}/>}/>
-                        <Route path="/profile" element={<Profile setUser={setUser} user={user}/>}/>
+                        <Route path="/profile" element={<Profile />}/>
                         <Route path="/catalog/:id" element={<Product/>}/>
                     </Routes>
                 </main>
@@ -136,8 +145,8 @@ setVisibleGoods(goods)
                 isActive, setState - параметры, которые работают внутри компонента Modal
                 modalActive, setModalActive - значения, которые сохраняются внутри параметров
             */}
-            <Modal isActive={modalActive} setState={setModalActive} api={api} setToken = {setToken}/>
-        </>
+            <Modal isActive={modalActive} setState={setModalActive} />
+        </Ctx.Provider>
     )
 }
 export default App;

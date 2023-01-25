@@ -140,3 +140,17 @@ width: 240px;
     padding: 6px 12px;
     display: flex;
 }
+.card{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+.card * {
+    margin: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
