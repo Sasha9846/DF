@@ -18,6 +18,11 @@ import Ctx from "./Ctx";
 import Card from "./components/Card";
 const smiles = [<Card/>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
+// Ниже пути сайта, при локальной работе, оставляем с одной палком, 
+// иначе берем по имени репозитория путь
+const PATH = "/";
+
+// const PATH = "/DF/"
 // alert(<Card/>)
 
 
@@ -132,11 +137,11 @@ setVisibleGoods(goods)
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>
-                        <Route path="/" element= {<Home data={products}/>}/>
-                        <Route path="/catalog" element={
+                        <Route path={PATH} element= {<Home data={products}/>}/>
+                        <Route path={PATH + "catalog"} element={
                         <Catalog data={visibleGoods}/>}/>
-                        <Route path="/profile" element={<Profile />}/>
-                        <Route path="/catalog/:id" element={<Product/>}/>
+                        <Route path={PATH + "profile"} element={<Profile />}/>
+                        <Route path={PATH + "/catalog/:id"} element={<Product/>}/>
                     </Routes>
                 </main>
                 <Footer/>
