@@ -39,8 +39,6 @@ const App = () => {
     const [visibleGoods, setVisibleGoods] = useState(goods);
 
     useEffect(() => { 
-        console.log('Hello') 
-        console.log(token);
         if (token) {
             //загрузить данные с сервера
             api.getProducts()
@@ -91,19 +89,20 @@ setVisibleGoods(goods)
             user: user,
             token: token,
             api: api,
+            modalActive: modalActive,
+            goods: goods,
+            visibleGoods: visibleGoods,
             setUser: setUser,
             setToken: setToken,
-            setApi: setApi
+            setApi: setApi,
+            setModalActive: setModalActive,
+            setGoods: setGoods,
+            setVisibleGoods,
+            PATH: PATH
         }}>
             <div className="container">
-                <Header 
-                // так было раньше, до подключения ctx.js
-                    // user={user} 
-                    // setUser={setUser}
-                    goods={goods} 
-                    searchGoods={setVisibleGoods}
-                    setModalActive={setModalActive}
-                />
+                <Header/>
+
                 <main>
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
@@ -121,7 +120,7 @@ setVisibleGoods(goods)
                 isActive, setState - параметры, которые работают внутри компонента Modal
                 modalActive, setModalActive - значения, которые сохраняются внутри параметров
             */}
-            <Modal isActive={modalActive} setState={setModalActive} />
+            <Modal/>
         </Ctx.Provider>
     )
 }

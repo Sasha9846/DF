@@ -7,4 +7,10 @@ api: {},
 setUser: () => {},
 setToken: () => {},
 setApi: () => {},
+modalActive: false,
+setModalActive: () => {},
+goods: [],
+setGoods: () => {},
+visibleGoods: [],
+setVisibleGoods: () => {}
 })

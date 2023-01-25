@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import Card from "../components/Card";
 import {Link} from "react-router-dom";
 import {EmojiFrown} from "react-bootstrap-icons"
-
-export default ({data}) => {
+import Ctx from "../Ctx";
+export default (data) => {
+    const {visibleGoods, user, PATH} = useContext(Ctx);
     return <>
-    {data.length > 0 
+    {user && <>
+    {visibleGoods.length > 0 
     ? <>
         <h1>Каталог товаров</h1>
         <div className="cards">
             {/* ниже так лучше не делать */}
-            {data.map((el, i) => <Link to={`/catalog/${el._id}`} key={el._id}>
+            {visibleGoods.map((el, i) => <Link to={`/catalog/${el._id}`} key={el._id}>
             <Card key={"card_" + i} 
             cardImg={el.pictures}
             text={el.name} 
@@ -25,9 +27,16 @@ export default ({data}) => {
     : <div className ="empty-block">
 <EmojiFrown/>
 <p>По запросу не найдено ни одного товара</p>
-<Link to="/" className ="btn">Вернуться на главную</Link>
+<Link to={PATH} className ="btn">Вернуться на главную</Link>
      </div>
      
 }
+</>}
+{!user && <div className ="empty-block">
+<EmojiFrown/>
+<p>Простите, у вас нет доступа к каталогу товаров. Необоходима авторизация.</p>
+<Link to={PATH} className ="btn">Вернуться на главную</Link>
+     </div>
+     }
 </>
 }

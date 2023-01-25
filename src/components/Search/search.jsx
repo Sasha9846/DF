@@ -1,26 +1,27 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "./search.css";
 import {ReactComponent as SearchImg} from "./img/magnifying-glass-solid.svg";
 import {ReactComponent as CloseImg} from "./img/circle-xmark-regular.svg";
 import { useNavigate } from "react-router-dom";
+import Ctx from "../../Ctx"
 
-
-export default ({data, searchGoods}) => {
+export default () => {
     const navigate = useNavigate();
+    const {goods, setVisibleGoods, PATH} = useContext(Ctx);
     const [text, updateText] = useState("");
-    const [searchData, setSearchData] = useState(data);
+    const [searchData, setSearchData] = useState(goods);
     const clearSearch = () => {
         updateText("");
-        setSearchData(data);
-        searchGoods(data)
+        setSearchData(goods);
+        setVisibleGoods(goods)
     }
 
     const search = (e) => {
-        navigate("/catalog")
+        navigate(PATH+"catalog")
         updateText(e.target.value);
-        let arr = data.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase()))
+        let arr = goods.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase()))
         setSearchData(arr);
-        searchGoods(arr);
+        setVisibleGoods(arr);
     }
     return <div className="search-block">
         <input placeholder="Поиск..." value={text} onChange={search}/>

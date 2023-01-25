@@ -5,12 +5,12 @@ import Logo from "./img/logo.png";
 import {Link} from "react-router-dom";
 import Ctx from "../../Ctx";
 // user, setUser, раньше вставлялись ниже, до введения Ctx.js
-export default ({goods, searchGoods, setModalActive}) => {
+export default () => {
     // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
     // const [user, setUser] = useState(localStorage.getItem("user8"));
 
     // let user = localStorage.getItem("user8");
-const {user, setUser} = useContext(Ctx);
+const {user, setUser, goods, setModalActive} = useContext(Ctx);
 
     const logIn = (e) => {
         e.preventDefault();
@@ -32,7 +32,7 @@ const {user, setUser} = useContext(Ctx);
     }
     return <header>
         <Link  to="/"><img className="logo" src= {Logo} alt="" /></Link>
-        <Search data={goods} searchGoods={searchGoods}/>
+        <Search/>
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">
             {/* true && true */}
