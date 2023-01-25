@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.77a52663.css",
-    "main.js": "/static/js/main.3ad7fe8c.js",
-    "index.html": "/index.html",
-    "main.77a52663.css.map": "/static/css/main.77a52663.css.map",
-    "main.3ad7fe8c.js.map": "/static/js/main.3ad7fe8c.js.map"
+    "main.css": "/DF/static/css/main.1358b161.css",
+    "main.js": "/DF/static/js/main.34f16877.js",
+    "static/media/logo.png": "/DF/static/media/logo.c79797f0013f52735c98.png",
+    "static/media/nut1.jpg": "/DF/static/media/nut1.28a92049153f37b51b4c.jpg",
+    "static/media/squ.png": "/DF/static/media/squ.80aaea8b5ba633970f6b.png",
+    "static/media/twosqu.png": "/DF/static/media/twosqu.937e064ba67fdade5c56.png",
+    "index.html": "/DF/index.html",
+    "static/media/circle-xmark-regular.svg": "/DF/static/media/circle-xmark-regular.8ef6e0a127f37e5c70a1e4bb4cb92f32.svg",
+    "static/media/magnifying-glass-solid.svg": "/DF/static/media/magnifying-glass-solid.06e310dbfbf3ab21da478aef6c037c14.svg",
+    "main.1358b161.css.map": "/DF/static/css/main.1358b161.css.map",
+    "main.34f16877.js.map": "/DF/static/js/main.34f16877.js.map"
   },
   "entrypoints": [
-    "static/css/main.77a52663.css",
-    "static/js/main.3ad7fe8c.js"
+    "static/css/main.1358b161.css",
+    "static/js/main.34f16877.js"
   ]
 }
