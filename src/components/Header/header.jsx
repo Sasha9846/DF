@@ -4,13 +4,14 @@ import "./header.css";
 import Logo from "./img/logo.png";
 import {Link} from "react-router-dom";
 import Ctx from "../../Ctx";
+import {PlusSquareFill} from "react-bootstrap-icons";
 // user, setUser, раньше вставлялись ниже, до введения Ctx.js
 export default () => {
     // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
     // const [user, setUser] = useState(localStorage.getItem("user8"));
 
     // let user = localStorage.getItem("user8");
-const {user, setUser, goods, setModalActive} = useContext(Ctx);
+const {user, setUser, setModalActive, PATH} = useContext(Ctx);
 
     const logIn = (e) => {
         e.preventDefault();
@@ -31,12 +32,13 @@ const {user, setUser, goods, setModalActive} = useContext(Ctx);
         setUser("");
     }
     return <header>
-        <Link  to="/"><img className="logo" src= {Logo} alt="" /></Link>
+        <Link  to={PATH}><img className="logo" src= {Logo} alt="" /></Link>
         <Search/>
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">
             {/* true && true */}
-            {user && user.name && <Link to="/profile">{user.name}</Link>}
+            {user && <Link to={PATH + "add"}><PlusSquareFill/></Link>}
+            {user && user.name && <Link to={PATH + "profile"}>{user.name}</Link>}
             {!user && <a href="" onClick={logIn}>Войти</a>}
             {user && <a href="" onClick={logOut}>Выйти</a>}
         </nav>

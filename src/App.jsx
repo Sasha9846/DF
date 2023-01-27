@@ -3,14 +3,16 @@ import "./style.css";
 import products from "./assets/data.json";
 // роутер - это маршрут
 import {Routes, Route} from "react-router-dom";
+// буцрап ниже можно отключить
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import Modal from "./components/Modal";
+import AddForn from "./pages/AddForn";
 
 import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
 import {Api} from "./Api";
-import Nut from'./img/nut1.jpg';
 
 import Profile from "./pages/Profile";
 import Product from "./pages/Product";
@@ -100,7 +102,7 @@ setVisibleGoods(goods)
             setVisibleGoods,
             PATH: PATH
         }}>
-            <div className="container">
+            <div className="wrapper">
                 <Header/>
 
                 <main>
@@ -108,10 +110,10 @@ setVisibleGoods(goods)
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>
                         <Route path={PATH} element= {<Home data={products}/>}/>
-                        <Route path={PATH + "catalog"} element={
-                        <Catalog data={visibleGoods}/>}/>
+                        <Route path={PATH + "catalog"} element={<Catalog data={visibleGoods}/>}/>
                         <Route path={PATH + "profile"} element={<Profile />}/>
-                        <Route path={PATH + "/catalog/:id"} element={<Product/>}/>
+                        <Route path={PATH + "catalog/:id"} element={<Product/>}/>
+                        <Route path = {PATH + "add"} element ={<AddForn/>}/>
                     </Routes>
                 </main>
                 <Footer/>

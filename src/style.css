@@ -6,13 +6,13 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.container {
+.wrapper {
     min-height: 100vh;
     display: grid;
     grid-template-rows: 100px auto 50px;
     font-family: sans-serif
 }
-.container>* {
+.wrapper>* {
     padding: 0 calc(50% - 600px);
 }
 .cards {
@@ -24,7 +24,7 @@ a {
     justify-content: center;
 }
 @media (max-width: 1260px) {
-    .container>* {
+    .wrapper>* {
         padding: 0 30px;
     }
     .cards {
@@ -153,4 +153,11 @@ width: 240px;
     margin: 0;
     margin-bottom: 5px;
     text-align: center;
+}
+
+.form-preview {
+    height: 106px;
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
 }
