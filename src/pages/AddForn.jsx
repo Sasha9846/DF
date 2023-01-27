@@ -1,4 +1,5 @@
-import React, {useContext, useState, useNavigate} from "react";
+import React, {useContext, useState} from "react";
+import {useNavigate} from "react-router";
 import Ctx from "../Ctx";
 import {Row, Col, Form, Button} from "react-bootstrap"
 export default () => {
@@ -11,9 +12,47 @@ const [discount, setDiscount] = useState(0);
 const [description, setDescription] = useState("");
 const [pictures, setPictures] = useState("");
 
+const navigate = useNavigate();
+
+const {api, PATH, serGoods} = useContext(Ctx);
+
+
+const handler = (e) => {
+    e.preventDefault();
+    let body = {
+        name: name || "Название отсутствует",
+        price: price || 0,
+        wight: wight || "неизвестно",
+        stock: stock || 0,
+        description: description || "Описание отсутствует",
+        discount: discount,
+        pictures: pictures
+    }
+    api.addProduct(body)
+    .then(res => res.json())
+    .then (data => {
+        alert(data + ' Товар успешно добавлен');
+        if (!data.error) {
+            serGoods(prev => [...prev, data]);
+            clear();
+            navigate(`${PATH}catalog/${data._id}`);
+        }
+    })
+}
+
+const clear = (e) => {
+    setName("");
+    setPrice(100);
+    setWight("");
+    setDiscount(0);
+    setStock(10);
+    setDescription("");
+    setPictures("");
+}
+
     return <>
     <h1>Добавить товар</h1>
-<Form>
+<Form onSubmit={handler}>
     <Row>
      <Col xs={12} md = {6}>
         <Form.Group className="mb-3">

@@ -46,23 +46,14 @@ getProduct(id) { // получение продуктa
     })
 }
 
-setProduct() { // добавить продукт
+addProduct(body) { // создать новый продукт (UPDD)
     return fetch(`${this.path}/products`, {
         method: "POST",
         headers: {
             "authorization": `Bearer ${this.token}`,
             "Content-Type": "application/json"
         }, 
-        body: {
-            "available": true, // boolean
-            "pictures": "https://react-learning.ru/image-compressed/2.jpg", // string
-            "name": "Куриные желудочки для собак", // string, обязательное
-            "price": 450, // number, обязательное
-            "discount": 10, // number 
-            "stock": 10, // number
-            "wight": "100 г", // string
-            "description": "Описание demo", // string, обязательное
-        }
+                body: JSON.stringify(body)
     })
 }
 
