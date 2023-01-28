@@ -14,13 +14,17 @@ export default (data) => {
             {/* ниже так лучше не делать */}
             {visibleGoods.map((el, i) => <Link to={`/catalog/${el._id}`} key={el._id}>
             <Card key={"card_" + i} 
+            // один фрагмент ниже писали на лекции
+            // {...el}
             cardImg={el.pictures}
             text={el.name} 
             descr={el.description}
             price = {el.price}
             description = {el.description}
             wight = {el.wight}
-            like={(i + 1) % 2 === 0}/>
+            like={(i + 1) % 2 === 0}
+            author = {el.author}
+            />
             </Link>)}
         </div>
     </>

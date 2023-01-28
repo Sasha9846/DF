@@ -42,14 +42,15 @@ export default ({data}) => {
         <h1>Покупают сейчас</h1>
         <div className="cards">
            
+           {/* ЭТО ТО ШО НИЖЕ ВЫЗЫВАЕТ ОШИБКУ
             {data.map((el, i) => <Card key={"card_" + i}
             text={el.name}
-            like={(i + 1) % 2 === 0}
+            like={el.isFavorite}
             cardImg = {el.pictures}
             price = {el.price}
             wight = {el.wight}
             // description = {el.description}
-            />)}
+            />)} */}
         </div>
     
         <Ads/>
