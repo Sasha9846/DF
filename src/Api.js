@@ -88,8 +88,8 @@ passwordReset(){ // забли праоль?
     }
 }
 
-deleteProducts() { // удаление товара
-    return fetch(`${this.path}/products/:productId`, {
+delProduct(id) { // удаление товара
+    return fetch(`${this.path}/products/${id}`, {
         method: "DELETE",
         headers: {
             "authorization": `Bearer ${this.token}`
