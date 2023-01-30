@@ -26,7 +26,7 @@ const paginate = usePagination(visibleGoods, 12);
 
         <div className="cards">
             {/* ниже так лучше не делать */}
-            {visibleGoods.map((el, i) => <Link to={`/catalog/${el._id}`} key={el._id}>
+            {paginate.setPageData().map((el, i) => <Link to={`/catalog/${el._id}`} key={el._id}>
             <Card key={"card_" + i} 
             // один фрагмент ниже писали на лекции
             // {...el}
@@ -41,6 +41,7 @@ const paginate = usePagination(visibleGoods, 12);
             />
             </Link>)}
         </div>
+        <Pagination hook={paginate}/>
     </>
     : <div className ="empty-block">
 <EmojiFrown/>

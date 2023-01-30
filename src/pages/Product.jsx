@@ -75,7 +75,7 @@ style={btnST}>
       
          <img className="productImg" src={product.pictures} alt="Изображение товара"></img>
    
-         <div lassName="productRightBlock">
+         <div className="productRightBlock">
 
             <div className="productPriceBlock">
                 <h2>Стоимость</h2>

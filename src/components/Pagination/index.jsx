@@ -13,15 +13,17 @@ for (let i = 0; i < max; i++){
 }
 
     return <div className="page-container">
-        <button className="btn page" disabled={current === 1}><CaretLeftFill/></button>
+        <button className="btn page" disabled={current === 1} onClick={hook.previous}><CaretLeftFill/></button>
         {pages.map(p=> <button 
         className="btn page" 
+        key = {p}
         style={{
         backgroundColor: p === current && "#222",
         color:  p === current && "yellow"
         }}
+        onClick = {e => {hook.step(p)}}
         >{p}</button>)}
-        <button className="btn page" disabled={current === max}><CaretRightFill/></button>
+        <button className="btn page" disabled={current === max} onClick={hook.next}><CaretRightFill/></button>
 
     </div>
 }
