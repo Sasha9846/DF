@@ -18,6 +18,7 @@ import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 import Ctx from "./Ctx";
 import Card from "./components/Card";
+import Favorites from "./pages/Favorites";
 const smiles = [<Card/>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
 // Ниже пути сайта, при локальной работе, оставляем с одной палком, 
@@ -39,6 +40,7 @@ const App = () => {
     const [api, setApi] = useState(new Api(token))
     const [goods, setGoods] = useState([]);
     const [visibleGoods, setVisibleGoods] = useState(goods);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => { 
         if (token) {
@@ -82,7 +84,15 @@ useEffect(() => {
     }, [api])
 
     useEffect(() => {
-setVisibleGoods(goods)
+setVisibleGoods(goods);
+setFavorites(goods.filter(el => {
+// console.log(el)
+el.likes.includes(user._id)
+
+}
+    
+
+    ))
     }, [goods])
     
     return (
@@ -94,12 +104,14 @@ setVisibleGoods(goods)
             modalActive: modalActive,
             goods: goods,
             visibleGoods: visibleGoods,
+            favorites: favorites,
+            setFavorites: setFavorites,
             setUser: setUser,
             setToken: setToken,
             setApi: setApi,
             setModalActive: setModalActive,
             setGoods: setGoods,
-            setVisibleGoods,
+            setVisibleGoods: setVisibleGoods,
             PATH: PATH
         }}>
             <div className="wrapper">
@@ -114,6 +126,7 @@ setVisibleGoods(goods)
                         <Route path={PATH + "profile"} element={<Profile />}/>
                         <Route path={PATH + "catalog/:id"} element={<Product/>}/>
                         <Route path = {PATH + "add"} element ={<AddForn/>}/>
+                        <Route path = {PATH + "favorites"} element ={<Favorites/>}/>
                     </Routes>
                 </main>
                 <Footer/>

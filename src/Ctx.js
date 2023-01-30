@@ -12,5 +12,8 @@ setModalActive: () => {},
 goods: [],
 setGoods: () => {},
 visibleGoods: [],
-setVisibleGoods: () => {}
+setVisibleGoods: () => {},
+
+favorites: [],
+setFavorites: () => {}
 })
