@@ -3,17 +3,37 @@ import "./index.css";
 import Ctx from "../../Ctx";
 
 
-export default ({text, cardImg, price, description, wight, author}) => {
-    const {user} = useContext(Ctx);
-    let like = author._id === user.id;
+export default ({name, pictures, price, description, wight, author, likes, _id, setGoods}) => {
+    const {user, setFavorites, api} = useContext(Ctx);
+    const [like, setLike] = useState(likes.includes(user.id));
+    
     
 
-    const update = () => {
+    const update = (e) => {
+e.stopPropagation();
+e.preventDefault();
+setLike(!like);
+api.setLike(_id, like)
+    .then(res => res.json())
+    .then(data => {
+        setFavorites(prev => {
+            let arr = prev.filter(el => el._id === _id);
+            return arr.length > 0 ? prev.filter(el => el._id !== el.id) :
+            [...prev, data]
+        })
+        // setGoods (prev => {
+        //     let arr = prev.filter(el => el._id !== _id);
+        //     return [...arr, data]
+        // })
+        setGoods (prev => prev.map(el => el._id === _id && like ? el.likes.push(user._id)
+        : el.likes.filter(l => l !== user._id)))
+    })
 
     }
+
     return <div className="card">
-       <img className="cardsImage" src = {cardImg}></img>
-       <h4>{text.toUpperCase ()}</h4> 
+       <img className="cardsImage" src = { pictures}></img>
+       <h4>{name.toUpperCase ()}</h4> 
  
       <h4 className = "productPrice">{price} ₽</h4> 
       <h5 className = "productWight">{wight}</h5>
