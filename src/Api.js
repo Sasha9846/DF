@@ -57,18 +57,9 @@ addProduct(body) { // создать новый продукт (UPDD)
     })
 }
 
-setLike() { // добавить лайк
-    return fetch(`${this.path}/products/likes/:productId`, {
-        method: "PUT",
-        headers: {
-            "authorization": `Bearer ${this.token}`
-        } 
-    })
-}
-
-deleteLike() { // убрать лайк
-    return fetch(`${this.path}/products/likes/:productId`, {
-        method: "DELETE",
+setLike(id, isLike) { // добавить/ удалить лайк
+    return fetch(`${this.path}/products/likes/${id}`, {
+        method: isLike ? "DELETE" : "PUT",
         headers: {
             "authorization": `Bearer ${this.token}`
         } 
