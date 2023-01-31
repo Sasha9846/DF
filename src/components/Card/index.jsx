@@ -1,11 +1,11 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import "./index.css";
 import Ctx from "../../Ctx";
 
 
-export default ({name, pictures, price, description, wight, author, likes, _id, setGoods}) => {
-    const {user, setFavorites, api} = useContext(Ctx);
-    const [like, setLike] = useState(likes.includes(user.id));
+export default ({name, pictures, price, description, wight, author, likes, _id}) => {
+    const {user, setFavorites, api, setGoods} = useContext(Ctx);
+    const [like, setLike] = useState(likes && likes.includes(user._id));
     
     
 
@@ -18,18 +18,33 @@ api.setLike(_id, like)
     .then(data => {
         setFavorites(prev => {
             let arr = prev.filter(el => el._id === _id);
-            return arr.length > 0 ? prev.filter(el => el._id !== el.id) :
+            return arr.length > 0 ? 
+            prev.filter(el => el._id !== el.id) :
             [...prev, data]
-        })
-        // setGoods (prev => {
-        //     let arr = prev.filter(el => el._id !== _id);
-        //     return [...arr, data]
-        // })
-        setGoods (prev => prev.map(el => el._id === _id && like ? el.likes.push(user._id)
-        : el.likes.filter(l => l !== user._id)))
+        }
+        )
+
+        
+        // setGoods (prev => { // не забыть вставить сюда новую переменную как в лекции
+        //     prev.map(el => el._id === _id 
+        //     && like 
+        //     ? el.likes.push(user._id)
+        // : el.likes.filter(l => l !== user._id))}
+        // )
     })
 
     }
+
+useEffect(() => {
+    api.getProducts()
+    .then(res => res.json())
+    .then(data => {
+        if (!data.error) {
+            setGoods(data.products)
+        }
+    })
+}, [like])
+
 
     return <div className="card">
        <img className="cardsImage" src = { pictures}></img>
