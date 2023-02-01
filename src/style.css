@@ -22,6 +22,7 @@ a {
     margin-bottom: 2em;
     margin-top: 2em;
     justify-content: center;
+    align-items: stretch;
 }
 @media (max-width: 1260px) {
     .wrapper>* {
@@ -133,27 +134,15 @@ width: 240px;
     fill: rgba(255, 166, 0);
 }
 
-
+/* search */
 .empty-block .btn {
     border: 2px solid orange;
     border-radius: 10px;
     padding: 6px 12px;
     display: flex;
 }
-.card{
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    
-}
-.card * {
-    margin: 0;
-    margin-bottom: 5px;
-    text-align: center;
-}
+
+
 
 .form-preview {
     height: 106px;
@@ -163,4 +152,7 @@ width: 240px;
 }
 #btnBuy {
     height: auto;
+}
+.btn:hover {
+background-color: blue;
 }

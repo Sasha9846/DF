@@ -16,7 +16,15 @@ header {
     border: none;
     border-bottom: 1px solid #222;
     outline: none;
+    display: flex;
+    align-items: center;
 }
+.search-block svg{
+
+    display: flex;
+    align-items: center;
+}
+
 .search:focus {
     border-bottom-color: #fff;
 }
@@ -24,4 +32,20 @@ header {
     display: flex;
     gap: 1em;
     color: white;
+}
+.badge-link {
+    position: relative;
+
+}
+.badge {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13px;
+    height: 13px;
+    font-size: 10px;
+    position: absolute;
+    bottom: -4px;
+    right: -7px;
 }

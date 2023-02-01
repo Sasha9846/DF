@@ -48,7 +48,7 @@ useEffect(() => {
 
     return <div className="card">
        <img className="cardsImage" src = { pictures}></img>
-       <h4>{name.toUpperCase ()}</h4> 
+       <h4>{name}</h4> 
  
       <h4 className = "productPrice">{price} ₽</h4> 
       <h5 className = "productWight">{wight}</h5>

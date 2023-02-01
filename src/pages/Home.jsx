@@ -42,15 +42,15 @@ export default ({data}) => {
         <h1>Покупают сейчас</h1>
         <div className="cards">
            
-           {/* ЭТО ТО ШО НИЖЕ ВЫЗЫВАЕТ ОШИБКУ
+           {/* ниже то, что ранее вызывало ошибку */}
             {data.map((el, i) => <Card key={"card_" + i}
-            text={el.name}
+            name={el.name}
             like={el.isFavorite}
-            cardImg = {el.pictures}
+            pictures = {el.pictures}
             price = {el.price}
             wight = {el.wight}
             // description = {el.description}
-            />)} */}
+            />)}
         </div>
     
         <Ads/>

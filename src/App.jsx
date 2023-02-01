@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import "./style.css";
 import products from "./assets/data.json";
 // роутер - это маршрут
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Link} from "react-router-dom";
 // буцрап ниже можно отключить
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/header";
@@ -19,7 +19,10 @@ import Product from "./pages/Product";
 import Ctx from "./Ctx";
 import Card from "./components/Card";
 import Favorites from "./pages/Favorites";
-const smiles = [<Card/>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
+
+import Fake from "./pages/Fake";
+
+const smiles = ["%_%", "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
 // Ниже пути сайта, при локальной работе, оставляем с одной палком, 
 // иначе берем по имени репозитория путь
@@ -117,7 +120,7 @@ return el.likes && el.likes.includes(user._id)
             <div className="wrapper">
                 <Header/>
 
-                <main>
+                <main className="py-2" >
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>
@@ -127,7 +130,16 @@ return el.likes && el.likes.includes(user._id)
                         <Route path={PATH + "catalog/:id"} element={<Product/>}/>
                         <Route path = {PATH + "add"} element ={<AddForn/>}/>
                         <Route path = {PATH + "favorites"} element ={<Favorites/>}/>
+                    <Route path = {PATH + "fake/:n/:title"} element ={<Fake/>}/>
                     </Routes>
+
+
+{/* <ul>
+ {smiles.map((el, i) => <li key ={el}>
+    <Link to ={`${PATH}fake/${i+1}/${el}`}>{el}</Link>
+    </li>)}
+</ul> */}
+
                 </main>
                 <Footer/>
             </div>

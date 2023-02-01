@@ -19,6 +19,8 @@
     display: grid;
     gap: 20px;
     position: relative;
+    height: auto;
+    overflow: visible;
 }
 .modal h2 {
     margin: 0;
@@ -54,16 +56,20 @@ input {
     outline: none;
 }
 input:focus {
-    border-color: rgb(243, 231, 5);
+    border-color: #419494;
 }
 button.btn {
     border: none;
     height: 30px;
     border-radius: 10px;
-    background-color: rgb(243, 231, 5);
+    background-color: #419494;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
 }
 button.link {
-    background-color: transparent;
+    background-color: #99CCCD;
     border: 1px solid rgb(243, 231, 5);
     box-sizing: border-box;
 }

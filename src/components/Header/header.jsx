@@ -41,7 +41,7 @@ const {user, setUser, setModalActive, PATH, favorites} = useContext(Ctx);
             {/* true && true */}
             {user && <Link to={PATH + "add"}><PlusSquareFill/></Link>}
             {user && <Link to={PATH + "favorites"} className="badge-link"><HeartFill/>
-            <Badge>{favorites.length}</Badge>
+            <Badge bg="light" text ="dark">{favorites.length}</Badge>
             </Link>}
             {user && user.name && <Link to={PATH + "profile"}>{user.name}</Link>}
             {!user && <a href="" onClick={logIn}>Войти</a>}
