@@ -21,6 +21,7 @@ import Card from "./components/Card";
 import Favorites from "./pages/Favorites";
 
 import Fake from "./pages/Fake";
+import Basket from "./pages/Basket";
 
 const smiles = ["%_%", "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
@@ -44,6 +45,11 @@ const App = () => {
     const [goods, setGoods] = useState([]);
     const [visibleGoods, setVisibleGoods] = useState(goods);
     const [favorites, setFavorites] = useState([]);
+    const [basket, setBasket] = useState(localStorage.getItem
+        ("basket8") ? JSON.parse(localStorage.getItem("basket8")) :
+        [])
+
+
 
     useEffect(() => { 
         if (token) {
@@ -98,6 +104,14 @@ return el.likes && el.likes.includes(user._id)
     ))
     }, [goods])
     
+
+useEffect(() => {
+    
+        localStorage.setItem("basket8", JSON.stringify(basket));
+    
+}, [basket]);
+
+
     return (
         <Ctx.Provider value ={{
 // слева части которые приходят от Ctx,а справа, которые были выше в этом файле
@@ -115,7 +129,9 @@ return el.likes && el.likes.includes(user._id)
             setModalActive: setModalActive,
             setGoods: setGoods,
             setVisibleGoods: setVisibleGoods,
-            PATH: PATH
+            PATH: PATH,
+            basket,
+            setBasket
         }}>
             <div className="wrapper">
                 <Header/>
@@ -130,6 +146,7 @@ return el.likes && el.likes.includes(user._id)
                         <Route path={PATH + "catalog/:id"} element={<Product/>}/>
                         <Route path = {PATH + "add"} element ={<AddForn/>}/>
                         <Route path = {PATH + "favorites"} element ={<Favorites/>}/>
+                        <Route path = {PATH + "basket"} element ={<Basket/>}/>
                     <Route path = {PATH + "fake/:n/:title"} element ={<Fake/>}/>
                     </Routes>
 

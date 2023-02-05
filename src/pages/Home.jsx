@@ -43,14 +43,14 @@ export default ({data}) => {
         <div className="cards">
            
            {/* ниже то, что ранее вызывало ошибку */}
-            {data.map((el, i) => <Card key={"card_" + i}
+            {/* {data.map((el, i) => <Card key={"card_" + i}
             name={el.name}
             like={el.isFavorite}
             pictures = {el.pictures}
             price = {el.price}
             wight = {el.wight}
             // description = {el.description}
-            />)}
+            />)} */}
         </div>
     
         <Ads/>

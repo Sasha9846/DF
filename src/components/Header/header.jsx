@@ -5,7 +5,7 @@ import Logo from "./img/logo.png";
 import {Link} from "react-router-dom";
 import Ctx from "../../Ctx";
 import {Badge} from "react-bootstrap"
-import {PlusSquareFill, HeartFill} from "react-bootstrap-icons";
+import {PlusSquareFill, HeartFill, CartFill} from "react-bootstrap-icons";
 import Favorites from "../../pages/Favorites";
 // user, setUser, раньше вставлялись ниже, до введения Ctx.js
 export default () => {
@@ -13,7 +13,7 @@ export default () => {
     // const [user, setUser] = useState(localStorage.getItem("user8"));
 
     // let user = localStorage.getItem("user8");
-const {user, setUser, setModalActive, PATH, favorites} = useContext(Ctx);
+const {user, setUser, setModalActive, PATH, favorites, basket} = useContext(Ctx);
 
     const logIn = (e) => {
         e.preventDefault();
@@ -40,12 +40,24 @@ const {user, setUser, setModalActive, PATH, favorites} = useContext(Ctx);
         <nav className="menu">
             {/* true && true */}
             {user && <Link to={PATH + "add"}><PlusSquareFill/></Link>}
-            {user && <Link to={PATH + "favorites"} className="badge-link"><HeartFill/>
+            
+            {user && <Link to={PATH + "favorites"} className="badge-link">
+                <HeartFill style = {{fontSize: "20px"}}/>
             <Badge bg="light" text ="dark">{favorites.length}</Badge>
             </Link>}
+
+
+            {user && <Link to={PATH + "basket"} className="badge-link">
+                <CartFill style = {{fontSize: "23px"}}/>
+            <Badge bg="light" text ="dark">
+                {basket.reduce((acc, el) => acc + el.cnt, 0)}
+                </Badge>
+            </Link>}
+
+
             {user && user.name && <Link to={PATH + "profile"}>{user.name}</Link>}
             {!user && <a href="" onClick={logIn}>Войти</a>}
-            {user && <a href="" onClick={logOut}>Выйти</a>}
+            {/* {user && <a href="" onClick={logOut}>Выйти</a>} */}
         </nav>
     </header>
 }

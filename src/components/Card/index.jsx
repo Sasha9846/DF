@@ -4,7 +4,7 @@ import Ctx from "../../Ctx";
 
 
 export default ({name, pictures, price, description, wight, author, likes, _id}) => {
-    const {user, setFavorites, api, setGoods} = useContext(Ctx);
+    const {user, setFavorites, api, setGoods, setBasket} = useContext(Ctx);
     const [like, setLike] = useState(likes && likes.includes(user._id));
     
     
@@ -23,8 +23,6 @@ api.setLike(_id, like)
             [...prev, data]
         }
         )
-
-        
         // setGoods (prev => { // не забыть вставить сюда новую переменную как в лекции
         //     prev.map(el => el._id === _id 
         //     && like 
@@ -32,8 +30,30 @@ api.setLike(_id, like)
         // : el.likes.filter(l => l !== user._id))}
         // )
     })
-
     }
+const buy = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setBasket(prev => {
+        const test = prev.filter(el => el.id === _id)
+        // alert("Товар добавлен в корзину");
+        if (test.length) {
+            return prev.map(el => {
+                if (el.id === _id) {
+                    el.cnt++
+                }
+                return el;
+            }
+                 );
+        }
+        else {
+            return [...prev, {id: _id, cnt: 1}]
+        }
+        
+    })
+}
+
+
 
 useEffect(() => {
     api.getProducts()
@@ -52,7 +72,7 @@ useEffect(() => {
  
       <h4 className = "productPrice">{price} ₽</h4> 
       <h5 className = "productWight">{wight}</h5>
-       <button className="btn" id = "btnBuy">Купить</button>
+       <button className="btn" id = "btnBuy" onClick={buy}>Купить</button>
        <p className = "productDescriprion">{description}</p> 
         {/* сюда выводить изображение кажлдого товара */}
         {/* return <div className="UpBlock"> */}
