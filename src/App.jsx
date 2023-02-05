@@ -87,6 +87,7 @@ useEffect(() => {
             api.getProducts()
             .then(res => res.json())
             .then(data => {
+                setVisibleGoods(data.products);
                 setGoods(data.products);
             })
         }

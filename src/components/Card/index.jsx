@@ -8,10 +8,13 @@ export default ({name, pictures, price, description, wight, author, likes, _id})
     const [like, setLike] = useState(likes && likes.includes(user._id));
     
     
+    const [flag, setFlag] = useState(false);
+
 
     const update = (e) => {
 e.stopPropagation();
 e.preventDefault();
+setFlag(true);
 setLike(!like);
 api.setLike(_id, like)
     .then(res => res.json())
@@ -56,6 +59,7 @@ const buy = (e) => {
 
 
 useEffect(() => {
+    if (flag) {
     api.getProducts()
     .then(res => res.json())
     .then(data => {
@@ -63,6 +67,7 @@ useEffect(() => {
             setGoods(data.products)
         }
     })
+}
 }, [like])
 
 
