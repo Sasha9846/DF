@@ -4,7 +4,7 @@ import Ctx from "../../Ctx";
 
 
 export default ({name, pictures, price, description, wight, author, likes, _id}) => {
-    const {user, setFavorites, api, setGoods, setBasket} = useContext(Ctx);
+    const {user, setFavorites, api, setGoods, setBasket, setVisibleGoods} = useContext(Ctx);
     const [like, setLike] = useState(likes && likes.includes(user._id));
     
     
@@ -26,6 +26,22 @@ api.setLike(_id, like)
             [...prev, data]
         }
         )
+        setGoods(prev => prev.map(el => {
+            if (el._id === data._id) {
+                return data;
+            }
+            else {
+                return el;
+            }
+        }));
+        setVisibleGoods(prev => prev.map(el => {
+            if (el._id === data._id) {
+                return data;
+            }
+            else {
+                return el;
+            }
+        }));
         // setGoods (prev => { // не забыть вставить сюда новую переменную как в лекции
         //     prev.map(el => el._id === _id 
         //     && like 

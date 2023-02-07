@@ -156,3 +156,22 @@ width: 240px;
 .btn:hover {
 background-color: blue;
 }
+
+.profile-row {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.profile-row svg{
+    cursor: pointer;
+    fill: rgb(161, 161, 161);
+}
+
+.profile-row svg:hover{
+    cursor: pointer;
+    fill: orange;
+}
+
+.profile-row input{
+    max-width: 300px;
+}

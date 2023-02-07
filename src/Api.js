@@ -145,5 +145,18 @@ updUser(){ // изменить пользователя
     }
 }
 
+updUser(body, img = false) {
+    return fetch(`${this.path}/v2/${this.group}/users/me${img ? "/avatar" : ""}`, {
+        method: "PATCH",
+        headers: {
+            "authorization": `Bearer ${this.token}`,
+            'Content-Type': 'application/json'
+        } ,
+        body: JSON.stringify(body)
+    }
+    )
+}
+
+
 }
 export {Api};
