@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from "react";
-import "./style.css";
+
 import products from "./assets/data.json";
 // роутер - это маршрут
 import {Routes, Route, Link} from "react-router-dom";
@@ -22,7 +22,7 @@ import Favorites from "./pages/Favorites";
 
 import Fake from "./pages/Fake";
 import Basket from "./pages/Basket";
-
+import "./style.css";
 const smiles = ["%_%", "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
 // Ниже пути сайта, при локальной работе, оставляем с одной палком, 

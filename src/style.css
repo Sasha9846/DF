@@ -175,3 +175,9 @@ gap: 10px;
 .profile-row input{
     max-width: 300px;
 }
+
+.btn.sort {
+    background-color: #000000;
+    color: orange;
+}
+
