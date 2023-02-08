@@ -137,7 +137,7 @@ useEffect(() => {
             <div className="wrapper">
                 <Header/>
 
-                <main className="py-2" >
+                <main>
                     {/* ниже для прошлых версий без реакт-роутер
                     {user ? <Catalog data={goods}/> : <Home data={prodCards}/>} */}
                     <Routes>

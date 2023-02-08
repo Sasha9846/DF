@@ -32,14 +32,17 @@ export default ({data}) => {
    {/* <Link to="/catalog">Перейти в КАТАЛОГ</Link> */} 
    {/* реализовано ниже */}
 <div className="UpBlockSq">
+<div className="upBlockSqTextAndImg">
 <img className="squImg" src={Sqr}/>
+
     <div className="UpBlock">
         <h1>ЛАКОМСТВА ДЛЯ СОБАК</h1>
         <p>Крафтовые угощения для ваших питомцев.<br></br> Натурально, полезно, интересно! </p>
     </div>
+    </div>
     <button className="sqButton"> <Link to="/catalog">ПЕРЕЙТИ В  КАТАЛОГ</Link></button>
     </div>
-        <h1>Покупают сейчас</h1>
+        
         <div className="cards">
            
            {/* ниже то, что ранее вызывало ошибку */}

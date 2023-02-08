@@ -6,11 +6,13 @@ footer {
     align-items: center;
     height: 120px;
     padding: 30px;
-    
-    
-
 }
-.footer__left{
+
+footer a {
+font-size: 16px;
+}
+
+.footer__left {
     text-align: left;
     display: grid;
     gap: 10px;

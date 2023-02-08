@@ -88,13 +88,14 @@ useEffect(() => {
 
 
     return <div className="card">
+        
        <img className="cardsImage" src = { pictures}></img>
        <h4>{name}</h4> 
  
       <h4 className = "productPrice">{price} ₽</h4> 
       <h5 className = "productWight">{wight}</h5>
        <button className="btn" id = "btnBuy" onClick={buy}>Купить</button>
-       <p className = "productDescriprion">{description}</p> 
+       {/* <p className = "productDescriprion">{description}</p>  */}
         {/* сюда выводить изображение кажлдого товара */}
         {/* return <div className="UpBlock"> */}
         <span className="card__heart" onClick={update}>

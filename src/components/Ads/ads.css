@@ -1,20 +1,17 @@
 .promo {
-    border: none;
-    border-radius: 1.5em;
+
+    border-radius: 0.6em;
     padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 1.4em;;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 20px;
-   
     position: relative;
     overflow: hidden;
     z-index: 1;
     color: white;
-    font-size: 2.2em;
-    font-family: sans-serif;
-    font-weight: 700;
+
+    
     
 }
 
@@ -28,10 +25,90 @@
     background-color: #99CCCD;
     z-index: -1;
     }
-/* .promo * {
-    position: relative;
-    z-index: 1;
-} */
+
 .promo img {
-    width: 270px;
+    height: 150px;
 }
+
+
+.promo-bottom {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.4em;
+    margin-bottom: 1.4em;
+}
+
+.promo-medium {
+    background-color: #419494;
+    color: white;
+    border-radius: 0.6em;
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    align-items: center;
+ 
+}
+
+.promo-medium img {
+    height: 230px;
+    
+}
+
+
+.promo-little {
+    background-color: #f0af4d;
+    color: white;
+    border-radius: 0.6em;
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    align-items: center;
+ 
+}
+
+.promo-little img {
+    height: 190px;
+}
+
+.btnAds {
+    background-color: #f0af4d;
+    border: none;
+    padding:  5px 10px;
+    color: white;
+    border-radius: 0.6em;
+}
+
+.btnAds:hover {
+
+    color: #419494;
+}
+
+.adsProductCatalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.4em;
+    margin-bottom: 1.4em;
+}
+
+.adsProductCatalogImg {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.adsProductCatalogCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.6em;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.textHeaderInHomePage{
+    color: rgb(102, 102, 102);
+    font-size: 30px;
+}
+.adsProductCatalogCard:hover :not(h4) {
+    filter: brightness(80%)
+}
+

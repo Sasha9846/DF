@@ -58,14 +58,15 @@ useEffect(() => {
     {visibleGoods.length > 0 
     ? <>
         <h1>Каталог товаров</h1>
-        <h3>Сортировать</h3>
+        <div className="sortBlockSuper">
+            <h4>Сортировать</h4>
         <div style={st}>
             <button className= {`btn ${btnType === "up" ? "sort" : ""}`} title="up" onClick={updSort}>По цене &nbsp;<SortNumericDown/></button>
             <button className= {`btn ${btnType === "down" ? "sort" : ""}`} title="down" onClick={updSort}>По цене &nbsp;<SortNumericUp/></button>
             <button className= {`btn ${btnType === "new" ? "sort" : ""}`} title="new" onClick={updSort}>Новинки</button>
             <button className= {`btn ${btnType === "sale" ? "sort" : ""}`} title="sale" onClick={updSort}>Скидки</button>
         </div>
-
+        </div>
 
         <Pagination hook={paginate}/>
 

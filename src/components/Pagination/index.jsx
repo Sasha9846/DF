@@ -18,8 +18,8 @@ for (let i = 0; i < max; i++){
         className="btn page" 
         key = {p}
         style={{
-        backgroundColor: p === current && "#222",
-        color:  p === current && "yellow"
+        backgroundColor: p === current && "#1D4443",
+        color:  p === current && "white"
         }}
         onClick = {e => {hook.step(p)}}
         >{p}</button>)}

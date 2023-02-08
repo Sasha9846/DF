@@ -3,7 +3,7 @@ import "./footer.css";
 import Vk from "../../img/vk.png";
 import Watsapp from "../../img/wt.png";
 import Viber from "../../img/vb.png";
-
+import { Link } from "react-router-dom";
 
 export default () => {
     const year = new Date().getFullYear();
@@ -18,8 +18,8 @@ export default () => {
 
 
         <div className="footer__left">
-            <a href="">Каталог</a>
-            <a href="">Акции</a>
+        <Link to="/catalog">   <a href="">Каталог</a></Link>
+        <Link to="/catalog"><a href="">Акции</a></Link>
             <a href="">Отзывы</a>
         </div>
 
