@@ -1,20 +1,25 @@
 .card {
-    box-shadow: 0 0 5px #2226;
-    border-radius: 1em;
-    padding: 1em;
-    box-sizing: border-box;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    border-radius: 0.6em;
+    padding: 0.6em;
+    /* box-sizing: border-box; */
     display: grid;
-    grid-template-rows: 100px auto 30px 40px auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-columns: 100%;
     position: relative;
-    gap: 1em;
+border: none;
     justify-items: center;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     
     height: 100%;
 }
 
+.productPriceAndWightInCard {
+    display: flex;
 
+    align-items: center;
+    margin-bottom: 10px;
+}
 /* .card{
     height: 100%;
     display: flex;
@@ -33,27 +38,47 @@
     width: max-content;
 }
 
-
+.cardProductName {
+    margin: 0;
+    margin-bottom: 10px;
+}
 
 .card__heart {
     position: absolute;
     top: .5em;
     right: 1em;
-    color: crimson;
+    color: orange;
 
 }
 .cardsImage {
     height: 150px;
+    margin: 0;
+    margin-bottom: 5px;
 }
 .productPrice {
-margin-top: 10px;
-}
-.productDescriprion {
-    color: rgba(0, 0, 0, 0.507);
-    margin-top: 0px;
+    margin: 0;
 }
 
+
 .productWight {
+    color: rgba(0, 0, 0, 0.438);
+    margin: 0px;
+    margin-left: 16px;
+}
+
+/* .productDescriprion {
     color: rgba(0, 0, 0, 0.507);
     margin-top: 0px;
+} */
+
+#btnBuy {
+padding: 18px 18px;
 }
+
+
+.card:hover {
+    transform: scale(1.03,1.03);
+    box-shadow: 0 0 10px rgba(34, 34, 34, 0.9);
+    border: none;
+}
+

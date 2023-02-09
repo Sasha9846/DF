@@ -152,9 +152,7 @@ width: 240px;
     background-position: top right;
     background-repeat: no-repeat;
 }
-#btnBuy {
-    height: auto;
-}
+
 .btn:hover {
 background-color: orange;
 color: white;
