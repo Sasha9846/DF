@@ -82,3 +82,22 @@ padding: 18px 18px;
     border: none;
 }
 
+.discountBlockRed {
+    background-color: orange;
+    color: white;
+position: absolute;
+left: 0.4em;
+top: 0.4em;
+border-radius: 0.6em;
+}
+.discountBlockRed p {
+    margin: 0;
+    padding: 4px 8px;
+    font-size: 16px;
+}
+.productDiscountText {
+ opacity: 0.3;
+    text-decoration: line-through;
+    margin-right: 10px;
+    font-size: 1.1em;
+}

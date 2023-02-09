@@ -117,7 +117,7 @@ width: 240px;
 
 
 
-.empty-block {
+.empty-block, .basketIsEmpty {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,13 +136,28 @@ width: 240px;
     fill: rgba(255, 166, 0);
 }
 
+.basketIsEmpty svg {
+    font-size: 2.5rem;
+    fill: rgba(255, 166, 0);
+}
+
 /* search */
 .empty-block .btn {
-    border: 2px solid orange;
+    background-color:#419494;
+    color: #ffffff;
     border-radius: 10px;
     padding: 6px 12px;
     display: flex;
 }
+
+.basketIsEmpty .btn {
+    background-color:#419494;
+    border-radius: 10px;
+    padding: 6px 12px;
+    display: flex;
+    color: #ffffff;
+}
+
 
 
 

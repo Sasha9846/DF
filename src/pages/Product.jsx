@@ -69,18 +69,36 @@ style={btnST}>
 
 
 
+
+
 <div className="productPage">
     
     <div className="productPageBlock">  
-      
+
+
+    <div className="productLefttBlock">
+    <div className="discountBlockRedInProductCard">
+
+        {product.discount > 0 && <p>Скидка {product.discount} %</p>}
+      </div>
          <img className="productImg" src={product.pictures} alt="Изображение товара"></img>
-   
+
+    </div>
+
+
+
          <div className="productRightBlock">
 
             <div className="productPriceBlock">
+                
                 <h2>Стоимость</h2>
-                <h3>{`${product.price} ₽`}</h3>   
-                <p>{product.wight}</p>
+                
+                <div className="PriceBlockPriceAndDiscountPrice">
+                    {product.discount > 0 && <h3 className="DiscountPriceInCard">{product.price}</h3>   }
+                    <h3>{`${product.price - product.price*(product.discount/100) } ₽`}</h3>   
+                </div>
+
+                <p>Вес/количество: {product.wight}</p>
             </div>
 
             <div className="productDescriptionsBlock">

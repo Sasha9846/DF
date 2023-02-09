@@ -3,7 +3,7 @@ import "./index.css";
 import Ctx from "../../Ctx";
 
 
-export default ({name, pictures, price, description, wight, author, likes, _id}) => {
+export default ({name, pictures, price, description, wight, author, likes, _id, discount}) => {
     const {user, setFavorites, api, setGoods, setBasket, setVisibleGoods} = useContext(Ctx);
     const [like, setLike] = useState(likes && likes.includes(user._id));
     
@@ -74,6 +74,8 @@ const buy = (e) => {
 
 
 
+
+
 useEffect(() => {
     if (flag) {
     api.getProducts()
@@ -87,14 +89,22 @@ useEffect(() => {
 }, [like])
 
 
+
+
+
     return <div className="card">
 
        <img className="cardsImage" src = { pictures}></img>
        <h6 className="cardProductName">{name}</h6> 
+      
+      <div className="discountBlockRed">{discount>0 && <p> Скидка {discount}% </p>}</div> 
+
         <div className="productPriceAndWightInCard"> 
-            <h5 className = "productPrice">{price}₽</h5> 
+            <h5 className = "productPrice productDiscountText">{discount > 0 && price}</h5>
+            <h5 className = "productPrice">{price - price*(discount/100)}₽</h5> 
             <h6 className = "productWight">{wight}</h6>
         </div>
+        
 
        <button className="btn" id = "btnBuy" onClick={buy}>В КОРЗИНУ</button>
        {/* <p className = "productDescriprion">{description}</p>  */}

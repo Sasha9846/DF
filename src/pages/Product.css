@@ -38,8 +38,9 @@ margin: 0;
 
 .productPriceBlock {
     margin: 0;
-    
-    margin-bottom: 15px;
+    display: flex;
+flex-direction: column;
+
 }
 
 .productPriceBlock h2{
@@ -92,4 +93,44 @@ margin-bottom: 10px;
 }
 .btnReturnInCatalog:hover{
     color: #419494;
+}
+
+.PriceBlockPriceAndDiscountPrice {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.DiscountPriceInCard {
+    opacity: 0.3;
+    text-decoration: line-through;
+margin-right: 20px;
+    font-size: 1.4em;
+}
+
+.productLefttBlock {
+
+    position: static;
+}
+.discountBlockRedInProductCard {
+    position: relative;
+    background-color: orange;
+    color: white;
+    border-radius: 0.6em;
+z-index: 10;
+right: -20px;
+top: 310px;
+width: max-content;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.discountBlockRedInProductCard p {
+    margin: 0;
+    padding: 4px 8px;
+    font-size: 20px;
+    
 }

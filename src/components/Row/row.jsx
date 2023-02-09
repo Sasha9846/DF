@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {Image, Button, ButtonGroup} from "react-bootstrap";
 import Ctx from "../../Ctx";
 
-export default ({name, pictures, cnt, price, id}) => {
+export default ({name, pictures, cnt, price, id, discount}) => {
     const {setBasket} = useContext(Ctx);
     const [n, setN] = useState(cnt);
     const [flag, setFlag] = useState(false);
@@ -46,6 +46,6 @@ useEffect(() => {
         </ButtonGroup>
     </td>
     
-    <td>{price * n} ₽</td>
+    <td>{(price - price*(discount/100)) * n} ₽</td>
     </tr>
 }
