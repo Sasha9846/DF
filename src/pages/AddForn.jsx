@@ -14,7 +14,7 @@ const [pictures, setPictures] = useState("");
 
 const navigate = useNavigate();
 
-const {api, PATH, serGoods} = useContext(Ctx);
+const {api, PATH, setGoods, setVisibleGoods} = useContext(Ctx);
 
 
 const handler = (e) => {
@@ -33,9 +33,20 @@ const handler = (e) => {
     .then (data => {
         alert(data + ' Товар успешно добавлен');
         if (!data.error) {
-            serGoods(prev => [...prev, data]);
-            clear();
-            navigate(`${PATH}catalog/${data._id}`);
+            setGoods(prev => prev.map(el => {
+                if(el._id === data._id) {
+                    return data;
+                } else {
+                    return el;
+                }
+            }));
+        setVisibleGoods(prev => prev.map(el => {
+            if(el._id === data._id) {
+                return data;
+            } else {
+                return el;
+            }
+        }));
         }
     })
 }

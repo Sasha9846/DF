@@ -45,10 +45,7 @@ const updSort = (e) => {
 }
 
 useEffect(() => {
-    if (sortGoods.length === 0) {
         setSortGoods(visibleGoods)
-    }
-    
 }, 
 [visibleGoods]);
 

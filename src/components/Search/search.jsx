@@ -7,12 +7,12 @@ import Ctx from "../../Ctx"
 
 export default () => {
     const navigate = useNavigate();
-    const {goods, setVisibleGoods, PATH} = useContext(Ctx);
+    const {goods, setVisibleGoods, visibleGoods, PATH} = useContext(Ctx);
     const [text, updateText] = useState("");
-    const [searchData, setSearchData] = useState(goods);
+    // const [searchData, setSearchData] = useState(goods);
     const clearSearch = () => {
         updateText("");
-        setSearchData(goods);
+        // setSearchData(goods);
         setVisibleGoods(goods)
     }
 
@@ -20,7 +20,7 @@ export default () => {
         navigate(PATH+"catalog")
         updateText(e.target.value);
         let arr = goods.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase()))
-        setSearchData(arr);
+        // setSearchData(arr);
         setVisibleGoods(arr);
     }
     return <div className="search-block">
@@ -28,7 +28,7 @@ export default () => {
         <button>{text ? <CloseImg onClick={clearSearch}/> : <SearchImg/>}</button>
         {text && <div className="search-result">
             По запросу <b>{text}</b>&nbsp; 
-            {searchData.length > 0 ? `найдено ${searchData.length} товаров` : "не найдено ни одного товара"}
+            {visibleGoods.length > 0 ? `найдено ${visibleGoods.length} товаров` : "не найдено ни одного товара"}
         </div>}
     </div>
 }

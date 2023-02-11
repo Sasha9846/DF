@@ -156,6 +156,13 @@ updUser(body, img = false) {
     }
     )
 }
+getUsers() { //получить пользователей
+    return fetch(`${this.path}/v2/${this.group}/users`, {
+        headers: {
+            "authorization": `Bearer ${this.token}`
+        }
+    })
+}
 
 
 }
