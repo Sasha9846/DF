@@ -21,6 +21,7 @@
     position: relative;
     height: auto;
     overflow: visible;
+   
 }
 .modal h2 {
     margin: 0;
@@ -29,17 +30,20 @@
 .modal-close {
     width: 20px;
     height: 20px;
-    background-color: #222;
+    background-color: #419494;;
     border-radius: 50%;
-    border: 2px solid;
+    border: 1px solid;
     box-sizing: border-box;
     position: absolute;
     top: -8px;
     right: -8px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .modal-close:hover {
-    background-color: rgb(243, 231, 5);
+    background-color: orange;
 }
 form {
     display: grid;
@@ -70,6 +74,10 @@ button.btn {
 }
 button.link {
     background-color: #99CCCD;
-    border: 1px solid rgb(243, 231, 5);
     box-sizing: border-box;
 }
+/* .forgotPassword {
+    width: max-content;
+    font-size: 12px;
+    border: 1px solid black;
+} */

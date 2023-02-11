@@ -101,7 +101,7 @@ useEffect(() => {
     }, [api])
 
     useEffect(() => {
-setVisibleGoods(goods);
+
 setFavorites(goods.filter(el => {
 // console.log(el)
 return el.likes && el.likes.includes(user._id)
