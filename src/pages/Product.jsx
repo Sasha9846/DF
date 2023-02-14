@@ -14,9 +14,11 @@ export default ({}) => {
 
 // по id приходят данные о товаре для отрисовки страницы с товаром
 // let token = localStorage.getItem('token8');
-const {api, PATH, user, setGoods} = useContext(Ctx);
+const {api, PATH, user, setGoods, } = useContext(Ctx);
 
 const navigate = useNavigate();
+
+
 
 useEffect(() => {
   api.getProduct(id)
@@ -115,7 +117,7 @@ style={btnST}>
                 <h2>Описание</h2>
                 <p>{product.description}</p>
              </div>
-
+      
 
          </div>
 
