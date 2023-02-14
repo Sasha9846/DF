@@ -28,29 +28,18 @@ const handler = (e) => {
         discount: discount,
         pictures: pictures
     }
+  
     api.addProduct(body)
     .then(res => res.json())
-    .then (data => {
-        alert(data + ' Товар успешно добавлен');
+    .then(data => {
+        alert(`Товар "${data.name}" успешно добавлен`);
         if (!data.error) {
-            setGoods(prev => prev.map(el => {
-                if(el._id === data._id) {
-                    return data;
-                } else {
-                    return el;
-                }
-            }));
-        setVisibleGoods(prev => prev.map(el => {
-            if(el._id === data._id) {
-                return data;
-            } else {
-                return el;
-            }
-        }));
+            setGoods(prev => [...prev, data]);
+            clear();
+            navigate(`${PATH}catalog/${data._id}`);
         }
     })
 }
-
 const clear = (e) => {
     setName("");
     setPrice(100);

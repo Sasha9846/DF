@@ -9,7 +9,7 @@ import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import Modal from "./components/Modal";
 import AddForn from "./pages/AddForn";
-
+import {Helmet} from "react-helmet";
 import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
 import {Api} from "./Api";
@@ -31,6 +31,7 @@ const PATH = "/";
 
 // const PATH = "/DF/"
 // alert(<Card/>)
+
 
 
 const App = () => {
@@ -148,6 +149,12 @@ useEffect(() => {
             authors
         }}>
             <div className="wrapper">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Doog Food</title>
+                <link rel="canonical" href="" />
+            </Helmet>
+
                 <Header/>
 
                 <main>
