@@ -38,8 +38,9 @@ const remove = () => {
 api.delProduct(id)
 .then(res => res.json())
 .then(data => {
-    alert(data + " товар удален")
+    
     if (!data.error){
+        alert(data.name + " товар удален")
         setGoods(prev => prev.filter(g => g._id !== data._id))
         navigate(`${PATH}catalog`);
     }
@@ -50,11 +51,20 @@ api.delProduct(id)
 
 }
 
+const choiseConfirm = () => {
+    if (window.confirm('Вы действительно хотите удалить товар?')) {
+       return remove()
+      } 
+}
+  
 
 return <>
 
-{product && product.author && product.author._id === user._id && <button 
-onClick ={remove} 
+{product && product.author && product.author._id === user._id && 
+
+<button 
+// onClick ={remove} 
+onClick= {choiseConfirm}
 className="btn" 
 style={btnST}>
     <Trash3/>
