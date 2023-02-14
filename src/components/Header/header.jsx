@@ -39,6 +39,7 @@ const {user, setUser, setModalActive, PATH, favorites, basket} = useContext(Ctx)
         {/* <input type="search" placeholder="Поиск..." className="search"/> */}
         <nav className="menu">
             {/* true && true */}
+            <nav className="addFavouritesAndBasketInHeader">  
             {user && <Link to={PATH + "add"}><PlusSquareFill/></Link>}
             
             {user && <Link to={PATH + "favorites"} className="badge-link">
@@ -53,11 +54,12 @@ const {user, setUser, setModalActive, PATH, favorites, basket} = useContext(Ctx)
                 {basket.reduce((acc, el) => acc + el.cnt, 0)}
                 </Badge>
             </Link>}
+            </nav>
 
-
-            {user && user.name && <Link to={PATH + "profile"}>{user.name}</Link>}
+            {user && user.name && <Link to={PATH + "profile"} style = {{marginRight: 0}}>{user.name}</Link>}
             {!user && <a href="" onClick={logIn}>Войти</a>}
             {/* {user && <a href="" onClick={logOut}>Выйти</a>} */}
+            {user && user.avatar && <img className="userAvatarInHeader" src={user.avatar}></img>}
         </nav>
     </header>
 }
