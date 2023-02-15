@@ -6,8 +6,9 @@ import Ctx from "../Ctx";
 import Pagination from "../components/Pagination";
 import usePagination from "../hooks/usePagination";
 
-export default (data) => {
+export default () => {
     const {visibleGoods, user, PATH} = useContext(Ctx);
+
 const [sortGoods, setSortGoods] = useState(visibleGoods)
 const paginate = usePagination(sortGoods, 12);
 

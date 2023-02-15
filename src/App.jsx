@@ -53,22 +53,22 @@ const App = () => {
 
 
 
-    useEffect(() => { 
-        if (token) {
-            //загрузить данные с сервера
-            api.getProducts()
-            .then(res => res.json())
-            .then(data => {
-               setGoods(data.products);
-            })
-            api.getUsers()
-            .then(res => res.json())
-            .then(data => {
-                console.log("af-af", data);
-                setAuthors(data);
-            })
-        }
-    }, []) // в этом случае консольлог сработает лишь раз, а если убрать [], то при любом изменении сайта)нажамать кнопку, обновтьь и тд) [] - это зависимость от чего-то
+    // useEffect(() => { 
+    //     if (token) {
+    //         //загрузить данные с сервера
+    //         api.getProducts()
+    //         .then(res => res.json())
+    //         .then(data => {
+    //            setGoods(data.products);
+    //         })
+    //         api.getUsers()
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log("af-af", data);
+    //             setAuthors(data);
+    //         })
+    //     }
+    // }, []) // в этом случае консольлог сработает лишь раз, а если убрать [], то при любом изменении сайта)нажамать кнопку, обновтьь и тд) [] - это зависимость от чего-то
     
     useEffect(() => { // нужен чтоб загружать данные с серв, делать гет-запрос
         console.log("change token");
@@ -93,10 +93,19 @@ useEffect(() => {
         if (token) {
             //загрузить данные с сервера
             api.getProducts()
+            
             .then(res => res.json())
             .then(data => {
                 setVisibleGoods(data.products);
                 setGoods(data.products);
+                console.log(data.length)
+            }
+            )
+            api.getUsers()
+            .then(res => res.json())
+            .then(data => {
+                console.log("af-af", data);
+                setAuthors(data);
             })
         }
     }, [api])

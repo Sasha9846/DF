@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import { Star, StarFill } from "react-bootstrap-icons";
 import Ctx from "../../Ctx";
 
-export default ({author, rating, created_at}) => {
+export default ({author, rating, created_at, text}) => {
     const {authors} = useContext(Ctx);
     const person = authors.filter(a => a._id === author)[0];
     const setRating = (n) => {
@@ -21,5 +21,6 @@ return stars;
     <h3>{person && person.name || ""}</h3>
     <div>{setRating(rating)}</div>
     <div>{new Date(created_at).toLocaleString()}</div>
+    <p>{text}</p>
     </>
 }
