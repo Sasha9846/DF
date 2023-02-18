@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: bisque; */
 }
 .productHName{
     margin-bottom: 20px;
@@ -40,7 +41,8 @@ margin: 0;
     margin: 0;
     display: flex;
 flex-direction: column;
-background-color: aquamarine;
+/* background-color: aquamarine; */
+margin-left: 40px;
 
 }
 
@@ -61,9 +63,14 @@ background-color: aquamarine;
 }
 
 .productDescriptionsBlock{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: start;
     margin: 0;
     margin-top: 15px;
+    margin-left: 140px;
 }
 
 .productDescriptionsBlock h2{
@@ -149,6 +156,7 @@ align-items: center;
 }
 .adsOne P {
     margin: 0;
+    opacity: 0.5;
 }
 .adsOne h6 {
     font-size: 1.1rem;
@@ -158,6 +166,7 @@ align-items: center;
 
 .adsTwo P {
     margin: 0;
+    opacity: 0.5;
 }
 .adsTwo h6 {
     font-size: 1.1rem;
@@ -181,4 +190,5 @@ align-items: center;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    
 }
