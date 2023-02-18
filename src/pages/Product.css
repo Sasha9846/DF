@@ -19,7 +19,7 @@ margin: 0;
 }
 .productPageBlock{
     display: flex;
-    gap: 150px;
+    gap: 80px;
     justify-content: center;
     
     align-items: center;
@@ -40,6 +40,7 @@ margin: 0;
     margin: 0;
     display: flex;
 flex-direction: column;
+background-color: aquamarine;
 
 }
 
@@ -48,13 +49,14 @@ flex-direction: column;
     margin-bottom: 0px;
 }
 .productPriceBlock h3{
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
 .productPriceBlock p{
-    margin-top: 10px;
-    margin-bottom: 0px;
+
+    margin-bottom: 15px;
+    
     opacity: 0.5;
 }
 
@@ -98,7 +100,6 @@ margin-bottom: 10px;
 .PriceBlockPriceAndDiscountPrice {
 
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 
 }
@@ -106,7 +107,7 @@ margin-bottom: 10px;
 .DiscountPriceInCard {
     opacity: 0.3;
     text-decoration: line-through;
-margin-right: 20px;
+margin-right: 15px;
     font-size: 1.4em;
 }
 
@@ -133,4 +134,51 @@ align-items: center;
     padding: 4px 8px;
     font-size: 20px;
     
+}
+
+#btnBuyInProductCard {
+ width: max-content;
+ padding: 18px 26px;
+}
+
+.adsOne {
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+.adsOne P {
+    margin: 0;
+}
+.adsOne h6 {
+    font-size: 1.1rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.adsTwo P {
+    margin: 0;
+}
+.adsTwo h6 {
+    font-size: 1.1rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.adsTwo svg {
+    width: 1.45em;
+    height: auto;
+    margin-right: 12px;
+
+}
+
+.adsOne svg {
+    width: 1.5em;
+    height: auto;
+    margin-right: 12px;
+}
+.insideAdsBlockInProductCard {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

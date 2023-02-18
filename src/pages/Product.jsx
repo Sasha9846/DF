@@ -5,7 +5,7 @@ import "./Product.css";
 import Review from "../components/Review/review";
 import { ArrowRight, ArrowLeftCircle } from 'react-bootstrap-icons';
 import Ctx from "../Ctx";
-import {Trash3} from "react-bootstrap-icons"
+import {Trash3, Truck, EmojiSunglasses} from "react-bootstrap-icons"
 
 
 export default ({}) => {
@@ -124,27 +124,43 @@ style={btnST}>
 
             <div className="productPriceBlock">
                 
-                <h2>Стоимость</h2>
-                
                 <div className="PriceBlockPriceAndDiscountPrice">
                     {product.discount > 0 && <h3 className="DiscountPriceInCard">{product.price}</h3>   }
                     <h3>{`${product.price - product.price*(product.discount/100) } ₽`}</h3>   
                 </div>
 
                 <p>Вес/количество: {product.wight}</p>
+                <button className="btn" id = "btnBuyInProductCard" onClick={buy}>В КОРЗИНУ</button>
             </div>
 
-            <div className="productDescriptionsBlock">
-                <h2>Описание</h2>
-                <p>{product.description}</p>
-             </div>
-             <button className="btn" id = "btnBuy" onClick={buy}>В КОРЗИНУ</button>
+            <div className="adsBlockInProductCard">
+            <div className="adsOne insideAdsBlockInProductCard" >
+            <Truck/>
+                <div>
+                <h6>Доставка в любую точку РФ</h6>
+                <p>Доставка курьером - от <b>299 ₽</b></p>
+                <p>Доставка в пункт выдачи - от <b>99 ₽</b></p>
+                </div>
+            </div>
+            <div className="adsTwo insideAdsBlockInProductCard">
+                <EmojiSunglasses/>
+                <div>
+                <h6>Гарантия качества</h6>
+                <p>Если Вам не понравилось качество нашей продукции,<br></br>мы вернем деньги или обменяем товар.</p>
+                </div>
+            </div>
+            </div>
+
+
 
          </div>
 
          
     </div>
-
+    <div className="productDescriptionsBlock">
+                <h2>Описание</h2>
+                <p>{product.description}</p>
+             </div>
 
 
     
