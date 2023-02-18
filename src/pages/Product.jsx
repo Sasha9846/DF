@@ -14,7 +14,7 @@ export default ({}) => {
 
 // по id приходят данные о товаре для отрисовки страницы с товаром
 // let token = localStorage.getItem('token8');
-const {api, PATH, user, setGoods, } = useContext(Ctx);
+const {api, user, setGoods, setBasket, PATH} = useContext(Ctx);
 
 const navigate = useNavigate();
 
@@ -59,6 +59,27 @@ const choiseConfirm = () => {
       } 
 }
   
+
+const buy = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setBasket(prev => {
+        const test = prev.filter(el => el.id === id);
+        if(test.length) {
+            return prev.map(el => {
+                if(el.id === id) {
+                    el.cnt++;
+                }
+                return el;
+            })
+        } else {
+            return [...prev, {id: id, cnt: 1}];
+        }
+    })
+}
+
+
+
 
 return <>
 
@@ -117,7 +138,7 @@ style={btnST}>
                 <h2>Описание</h2>
                 <p>{product.description}</p>
              </div>
-      
+             <button className="btn" id = "btnBuy" onClick={buy}>В КОРЗИНУ</button>
 
          </div>
 
