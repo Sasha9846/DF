@@ -15,13 +15,21 @@ for (let i= stars.length; i < 5; i++){
     stars.push(<Star key = {i}/>)
 }
 
+
+
+
+
 return stars;
     }
     return <>
-    
+
+  
     <div className="oneReviewBlock">
     <div className="authorAndAvatarOfReview">
-        <Person/>
+        {/* <Person/> */}
+        <div className="blockAvatarOfAutorReview">
+    <img className="avatarOfAutorReview" src={person.avatar}></img> 
+    </div> 
         <h6 className="authorOfReview">{person && person.name || ""}</h6>
     </div>
 

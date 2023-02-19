@@ -25,3 +25,21 @@ fill: orange;
     
     align-items: center;
 }
+
+.avatarOfAutorReview {
+    width: 35px;
+   height: auto;
+   margin: 0;
+    
+    
+    
+}
+
+.blockAvatarOfAutorReview {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 200px;
+    display: flex;
+    margin-right: 8px;
+}
