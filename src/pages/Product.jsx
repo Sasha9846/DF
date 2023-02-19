@@ -173,10 +173,11 @@ style={btnST}>
     <h2>Отзывы</h2>
                         <AddReview id={id} setProduct={setProduct} />
     </div>
+    <div className="reviewsVlockGridTest">
         {product.reviews && product.reviews.length > 0
         && product.reviews.map((el, i) => <Review {...el}
         key = {i}/>)}
-
+    </div>
 
     </div>
     <Link to="/catalog">Назад</Link>

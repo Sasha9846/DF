@@ -193,9 +193,6 @@ align-items: center;
     
 }
 
-.addReviewsInCard {
-
-}
 
 .reviews {
     display: flex;
@@ -206,4 +203,8 @@ align-items: center;
     margin: 0;
     margin-top: 15px;
     margin-left: 140px;
+}
+
+.reviewsVlockGridTest {
+
 }

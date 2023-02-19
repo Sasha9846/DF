@@ -1,0 +1,27 @@
+.starRating svg{
+fill: orange;
+}
+.authorOfReview {
+    margin: 0;
+}
+.oneReviewBlock {
+    margin-bottom: 30px;
+
+}
+.dateOfReview {
+    opacity: 0.4;
+    font-size: 0.8em;
+}
+
+.textOfReview {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+.authorAndAvatarOfReview svg{
+    margin-right: 8px;
+}
+.authorAndAvatarOfReview {
+    display: flex;
+    
+    align-items: center;
+}

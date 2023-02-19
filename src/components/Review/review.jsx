@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
-import { Star, StarFill } from "react-bootstrap-icons";
+import { Star, StarFill, Person } from "react-bootstrap-icons";
 import Ctx from "../../Ctx";
-
+import style from "./review.css"
 export default ({author, rating, created_at, text}) => {
     const {authors} = useContext(Ctx);
     const person = authors.filter(a => a._id === author)[0];
@@ -18,9 +18,16 @@ for (let i= stars.length; i < 5; i++){
 return stars;
     }
     return <>
-    <h3>{person && person.name || ""}</h3>
-    <div>{setRating(rating)}</div>
-    <div>{new Date(created_at).toLocaleString()}</div>
-    <p>{text}</p>
+    
+    <div className="oneReviewBlock">
+    <div className="authorAndAvatarOfReview">
+        <Person/>
+        <h6 className="authorOfReview">{person && person.name || ""}</h6>
+    </div>
+
+        <div className="starRating">{setRating(rating)}</div>
+        <div className="dateOfReview">{new Date(created_at).toLocaleString()}</div>
+        <p className="textOfReview">{text}</p>
+    </div>
     </>
 }
