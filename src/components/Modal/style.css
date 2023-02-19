@@ -1,5 +1,6 @@
 .modal-container {
     position: fixed;
+   
     background-color: #2228;
     top: 0;
     left: 0;
@@ -8,10 +9,11 @@
     display: none;
     justify-content: center;
     align-items: center;
+    
     z-index: 100;
 }
 .modal {
-    width: 300px;
+    width: max-content;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -21,7 +23,10 @@
     position: relative;
     height: auto;
     overflow: visible;
-   
+    margin: 0;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 0px;
 }
 .modal h2 {
     margin: 0;
@@ -81,3 +86,7 @@ button.link {
     font-size: 12px;
     border: 1px solid black;
 } */
+.formRegistr {
+    margin: 0;
+}
+

@@ -48,12 +48,12 @@ const {api, setToken, setUser} = useContext(Ctx);
                 close(false);
             }
             else {
-                alert("Опаньки, ошибочка: " + data.message)
+                console.log("Опаньки, ошибочка: " + data.message)
             }
         })
     }
 
-    return <form onSubmit={sendForm}>
+    return <form onSubmit={sendForm} className="formRegistr">
         <input 
             type="email" 
             placeholder="Введите вашу почту" 
