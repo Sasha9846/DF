@@ -1,5 +1,5 @@
 import Signup from "./components/Modal/Signup";
-
+const onResponce = (res) => (res.ok ? res.json() : Promise.reject(`Error: ${res.status}`));
 class Api {
     constructor(token) {
         this.path = "https://api.react-learning.ru";
@@ -38,12 +38,11 @@ getProducts() { // получение продуктов
 }
 
 getProduct(id) { // получение продуктa
-    return fetch(`${this.path}/products/${id}`, 
-    {
+    return fetch(`${this.path}/products/${id}`, {
         headers: {
             "authorization": `Bearer ${this.token}`
-        } 
-    })
+        }
+    }).then(onResponce);
 }
 
 addProduct(body) { // создать новый продукт (UPDD)
@@ -88,13 +87,15 @@ delProduct(id) { // удаление товара
     })
 }
 
-createReview(){ //добавить отзыв
-    return fetch(`${this.path}/products/review/:productId`), {
-        method: "PUT",
+addReview(productId, body) { // отзыв
+    return fetch(`${this.path}/products/review/${productId}`, {
+        method: "POST",
         headers: {
-            "authorization": `Bearer ${this.token}`
-        } 
-    }
+            "authorization": `Bearer ${this.token}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+    }).then(onResponce);
 }
 
 deleteReview(){ //удалить отзыв

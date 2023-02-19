@@ -1,0 +1,46 @@
+Form {
+    margin-bottom: 30px;
+}
+
+.form-header {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.add-review {
+    display: none;
+}
+
+.active {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.btn-review {
+    padding: 4px 16px;
+    background-color: rgb(243, 242, 242);
+    border-radius: 0.6em;
+    font-size: 0.8em;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.btn-review:hover {
+    color: white;
+    background-color: #419494;
+    border: none;
+}
+#formReview {
+    min-width: 40vw;
+    width: max-content;
+   
+}
+
+#btnReviewInProductCard {
+    border-radius: 0.5em;
+    padding: 4px 16px;
+    font-size: 0.9em;
+}

@@ -6,6 +6,7 @@ import Review from "../components/Review/review";
 import { ArrowRight, ArrowLeftCircle } from 'react-bootstrap-icons';
 import Ctx from "../Ctx";
 import {Trash3, Truck, EmojiSunglasses} from "react-bootstrap-icons"
+import AddReview from "../components/AddReview/AddReview";
 
 
 export default ({}) => {
@@ -163,10 +164,15 @@ style={btnST}>
              </div>
 
 
-    
+                    
+ 
    
-    <h2>Отзывы</h2>
     <div className="reviews">
+    
+    <div className="addReviewsInCard">
+    <h2>Отзывы</h2>
+                        <AddReview id={id} setProduct={setProduct} />
+    </div>
         {product.reviews && product.reviews.length > 0
         && product.reviews.map((el, i) => <Review {...el}
         key = {i}/>)}
