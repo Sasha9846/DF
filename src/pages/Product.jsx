@@ -82,9 +82,11 @@ const buy = (e) => {
 
 
 
+
+
 return <>
 
-{product && product.author && product.author._id === user._id && 
+{product && product.author && product.author._id === user._id && product.author.avatar === user.avatar &&
 
 <button 
 // onClick ={remove} 
@@ -164,15 +166,21 @@ style={btnST}>
              </div>
 
 
-                    
+
  
    
     <div className="reviews">
     
     <div className="addReviewsInCard">
-    <h2>Отзывы</h2>
-                        <AddReview id={id} setProduct={setProduct} />
+        <h2>Отзывы</h2>
+        <div className="reviewsAndQuanity">
+            <p id ="quantityReview">Oтзывов о товаре: {product.reviews?.length}</p>
+            <AddReview id={id} setProduct={setProduct} />
+        </div>
+
     </div>
+
+
     <div className="reviewsVlockGridTest">
         {product.reviews && product.reviews.length > 0
         && product.reviews.map((el, i) => <Review {...el}
@@ -180,7 +188,7 @@ style={btnST}>
     </div>
 
     </div>
-    <Link to="/catalog">Назад</Link>
+    <div className ="btnReturnInCatalog" id ="returnBottom"><Link to={PATH + "catalog"}><ArrowLeftCircle/> Вернуться в каталог</Link></div>
     </div>
     </>
 }

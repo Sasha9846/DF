@@ -5,20 +5,26 @@ fill: orange;
     margin: 0;
 }
 .oneReviewBlock {
-    margin-bottom: 30px;
-
+    /* margin-bottom: 30px; */
+    background-color: #4194940e;
+    padding: 20px;
+    border-radius: 0.6em;
 }
 .dateOfReview {
     opacity: 0.4;
     font-size: 0.8em;
+
+   
 }
 
 .textOfReview {
     opacity: 0.8;
     font-size: 0.9em;
+    margin-bottom: 0;
 }
 .authorAndAvatarOfReview svg{
-    margin-right: 8px;
+ width: 30px;
+ height: 30px;
 }
 .authorAndAvatarOfReview {
     display: flex;
@@ -27,9 +33,10 @@ fill: orange;
 }
 
 .avatarOfAutorReview {
-    width: 35px;
-   height: auto;
+    width: auto;
+   height: 35px;
    margin: 0;
+   
     
     
     
@@ -42,4 +49,6 @@ fill: orange;
     border-radius: 200px;
     display: flex;
     margin-right: 8px;
+    justify-content: center;
+    align-items: center;
 }

@@ -16,7 +16,7 @@
 margin: 0;
     color: rgba(0, 0, 0, 0.5);
     font-size: 0.8em;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .productPageBlock{
     display: flex;
@@ -69,7 +69,7 @@ margin-left: 40px;
     justify-content: flex-start;
     align-self: start;
     margin: 0;
-    margin-top: 15px;
+    margin-top: 25px;
     margin-left: 140px;
 }
 
@@ -206,5 +206,26 @@ align-items: center;
 }
 
 .reviewsVlockGridTest {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    align-content: center;
+  
+   
 
+}
+
+#returnBottom{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#quantityReview {
+    opacity: 0.5;
+    margin-right: 20px;
+}
+
+.reviewsAndQuanity {
+    display: flex;
+    align-items: center;
 }
