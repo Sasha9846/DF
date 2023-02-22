@@ -124,7 +124,7 @@ margin-right: 15px;
 }
 .discountBlockRedInProductCard {
     position: relative;
-    background-color: orange;
+    background-color: rgb(255, 115, 0);
     color: white;
     border-radius: 0.6em;
 z-index: 10;
@@ -202,7 +202,8 @@ align-items: center;
     align-self: start;
     margin: 0;
     margin-top: 15px;
-    margin-left: 140px;
+    /* margin-left: 140px;
+    margin-right: 140px; */
 }
 
 .reviewsVlockGridTest {
@@ -210,6 +211,7 @@ align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     align-content: center;
+    padding: 0 140px;
   
    
 
@@ -227,5 +229,12 @@ align-items: center;
 
 .reviewsAndQuanity {
     display: flex;
-    align-items: center;
+    
+}
+
+.discontRedText{
+    color: rgb(255, 115, 0);
+}
+.addReviewsInCard{
+    margin-left: 140px;
 }

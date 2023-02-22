@@ -21,7 +21,6 @@ return stars;
 
 
 
-
     return <>
     
     <div className="oneReviewBlock">
@@ -47,4 +46,4 @@ return stars;
     </>
 }
 
-<img class="avatarOfAutorReview" src="https://react-learning.ru/image-compressed/default-image.jpg"></img>
+{/* <img class="avatarOfAutorReview" src="https://react-learning.ru/image-compressed/default-image.jpg"></img> */}

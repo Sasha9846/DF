@@ -83,7 +83,7 @@ padding: 18px 18px;
 }
 
 .discountBlockRed {
-    background-color: orange;
+    background-color: rgb(255, 115, 0);
     color: white;
 position: absolute;
 left: 0.4em;
@@ -100,4 +100,7 @@ border-radius: 0.6em;
     text-decoration: line-through;
     margin-right: 10px;
     font-size: 1.1em;
+}
+.productPriceRed {
+    color: rgb(255, 115, 0);
 }

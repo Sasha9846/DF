@@ -77,11 +77,13 @@ const buy = (e) => {
             return [...prev, {id: id, cnt: 1}];
         }
     })
+
+    
 }
 
 
 
-
+// console.log(product.reviews)
 
 
 return <>
@@ -129,7 +131,7 @@ style={btnST}>
                 
                 <div className="PriceBlockPriceAndDiscountPrice">
                     {product.discount > 0 && <h3 className="DiscountPriceInCard">{product.price}</h3>   }
-                    <h3>{`${product.price - product.price*(product.discount/100) } ₽`}</h3>   
+                    {product.discount > 0 ? <h3 className="discontRedText">{`${product.price - product.price*(product.discount/100) } ₽`}</h3> : <h3>{`${product.price - product.price*(product.discount/100) } ₽`}</h3>}   
                 </div>
 
                 <p>Вес/количество: {product.wight}</p>

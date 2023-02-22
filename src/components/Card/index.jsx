@@ -101,7 +101,11 @@ useEffect(() => {
 
         <div className="productPriceAndWightInCard"> 
             <h5 className = "productPrice productDiscountText">{discount > 0 && price}</h5>
-            <h5 className = "productPrice">{price - price*(discount/100)}₽</h5> 
+            {/* <h5 className = "productPrice">{price - price*(discount/100)}₽</h5>  */}
+           
+            {discount > 0 
+            ? <h5 className = "productPrice productPriceRed">{price - price*(discount/100)} ₽</h5>  
+            : <h5 className = "productPrice">{price - price*(discount/100)} ₽</h5> }  
             <h6 className = "productWight">{wight}</h6>
         </div>
         
